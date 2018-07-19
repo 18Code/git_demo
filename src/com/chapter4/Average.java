@@ -28,6 +28,9 @@ public class Average {
 		average = total/10;//计算平均成绩
 		JOptionPane.showMessageDialog(null, "Class average is:"+average,"Class Average",JOptionPane.INFORMATION_MESSAGE);
 		//将平均成绩显示在对护框中
+		//将平均成绩显示在对护框中
+		//将平均成绩显示在对护框中
+		
 		System.exit(0);//终止程序
 	}
 
