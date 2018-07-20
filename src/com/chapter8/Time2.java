@@ -41,7 +41,7 @@ public class Time2 {
 	
 	public String toStandardString(){
 		DecimalFormat twoDigits = new DecimalFormat("00");
-		return ((hour==12 ||hour==0)?12:hour%12)+":"+twoDigits.format(minute)+":"twoDigits.format(second)+(hour<12?"AM":"PM");
+		return ((hour==12 ||hour==0)?12:hour%12)+":"+twoDigits.format(minute)+":" + twoDigits.format(second)+(hour<12?"AM":"PM");
 	}//end toStandardString
 
 }//end class Time2
