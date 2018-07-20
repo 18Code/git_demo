@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 
 public class Time3 {
 
+	
+	
 	public String toUniversalString() {	//转换为世界时间格式
 		DecimalFormat twoDigits = new DecimalFormat("00");	//创建两位数字格式化的DecimalFormat对象
 		

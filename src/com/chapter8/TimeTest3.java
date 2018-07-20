@@ -19,19 +19,19 @@ public class TimeTest3 {
 	   //拼接输出字符串，t3调用函数，输出格式化的时间
 	    output+="\nt3:hour and minute specified;second is defaulted"
 	    		+ "\n   "+t3.toUniversalString()+"\n   "+t3.toStandardString();
-
+	  //拼接输出字符串，t4调用函数，输出格式化的时间
 		output += "\nt4: hour, minute and second specified"
 				+ "\n	" + t4.toUniversalString()
 				+ "\n	" + t4.toStandardString();
-		
+		//拼接输出字符串，t5调用函数，输出格式化的时间
 		output += "\nt5: all invalid values spcified"
 				+ "\n	" + t5.toUniversalString()
 				+ "\n	" + t5.toStandardString();
-		
+		//拼接输出字符串，t6调用函数，输出格式化的时间
 		output += "\nt6: Time2 object t4 specified"
 				+ "\n	" + t6.toUniversalString()
 				+ "\n	" + t6.toStandardString();
-		
+		//在弹出框中输出output
 		JOptionPane.showMessageDialog(null, output, "Overloaded Constructors", JOptionPane.INFORMATION_MESSAGE);
 		
 		System.exit(0);
