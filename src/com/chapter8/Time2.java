@@ -24,9 +24,12 @@ public class Time2 {
 		setTime(h, m, s);	//调用setTime方法
 	}
 	
-	public Time2(Time2 time){	//复制的构造函数，接收另一个Time2对象的一个引用
-		this(time.hour,time.minute,time.second);	//将参数中的值传递给Time2(int h, int m, int s)，以初始化实例变量
-	}
+
+	public Time2(Time2 time){   //声明的Time2函数接收另一个Time2对象的引用
+		this(time.hour,time.minute,time.second);
+	}//该构造函数直接访问其参数的hour、minute、second值
+
+	
 	
 	public void setTime(int h,int m,int s){	//对实例变量初始化
 		hour=((h >= 0&&h < 24)?h:0);	//若h为有效值，把h赋给hour；否则hour赋值0
@@ -45,4 +48,3 @@ public class Time2 {
 	}//end toStandardString
 
 }//end class Time2
-
