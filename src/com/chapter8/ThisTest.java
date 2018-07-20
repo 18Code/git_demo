@@ -1,8 +1,9 @@
 package com.chapter8;
 
+import java.text.DecimalFormat;
+
 import javax.swing.JOptionPane;
 
-import javafx.stage.StageStyle;
 
 public class ThisTest {
 
@@ -32,7 +33,15 @@ class SimpleTime {
 
 	public String buildString() {
 		// TODO Auto-generated method stub
-		return null;
+		return "this.toStandardString():"+this.toStandardString()+"\ntoStandardString():"+toStandardString();
+		
+	}
+	public String toStandardString(){
+		DecimalFormat twoDigits = new DecimalFormat("00");
+		
+		return twoDigits.format(this.hour)+":"+
+		twoDigits.format(this.minute)+":"+
+		twoDigits.format(this.second);
 	}
 	
-}
+}//end class SimpleTime
