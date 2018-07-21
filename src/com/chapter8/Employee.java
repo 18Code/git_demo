@@ -8,7 +8,7 @@ public class Employee {	//Employee类声明
 	private Data hireData;		//声明入职日期
 	public Employee(String firstName, String lastName, Data brithData, Data hireData) {	//构造方法初始化姓名，出生日期和入职日期
 		super();
-		this.firstName = firstName;
+		this.firstName = firstName;	
 		this.lastName = lastName;
 		this.brithData = brithData;
 		this.hireData = hireData;
