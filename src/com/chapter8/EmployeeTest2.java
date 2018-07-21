@@ -24,13 +24,15 @@ public class EmployeeTest2 {
 				" " + e2.getLastName();	//将两个员工的姓名添加到output
 		
 		e1=null;
-		e2=null;          //将e1、e2赋值为null
+		e2=null;   //将e1、e2赋值为null
+		
 		System.gc();     //调用垃圾回收处理机制
 
 		
-		output+="\n\nEmployee after System.gc(): "
+		output+="\n\nEmployees after System.gc(): "
 		    +Employee2.getCount();   //输出调用垃圾回收处理之后的静态变量员工数量		
-		JOptionPane.showMessageDialog(null, output,"Static Members",JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, output,"Static Members",
+				JOptionPane.INFORMATION_MESSAGE);
 		
 		System.exit(0);
 	}
