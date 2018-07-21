@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 
 public class Time3 {
 
-	public int hour;
+	public int hour;	
 	public int minute;
 	public int second;
 
@@ -32,36 +32,36 @@ public class Time3 {
 		this(time.getHour(), time.getMinute(), time.getSecond());
 	}
 	
-	public void setTime(int h, int m, int s) {
+	public void setTime(int h, int m, int s) {	//setTime方法
 		// TODO Auto-generated method stub
-		setHour(h);
-		setMinute(m);
-		setSecond(s);
+		setHour(h);	//调用setHour方法，设置hour
+		setMinute(m); //调用setMinute方法，设置minute
+		setSecond(s); //调用setSecond方法，设置second
 	}
 
-	public int getHour() {
-		return hour;
+	public int getHour() {	//读取hour的方法
+		return hour;	//返回hour
 	}
 
-	public void setHour(int h) {
+	public void setHour(int h) {	//setHour方法
 		hour = ((h >= 0 && h < 24) ? h : 0);	//若h为有效值，把h赋给hour；否则hour赋值0
 		
 	}
 
-	public int getMinute() {
-		return minute;
+	public int getMinute() {	//读取minute的方法
+		return minute;	//返回minute
 	}
 
-	public void setMinute(int m) {
+	public void setMinute(int m) {	//setMinute方法
 		minute = ((m >= 0 && m < 60) ? m : 0);	//若m为有效值，把m赋给minute；否则minute赋值0
 		
 	}
 
-	public int getSecond() {
-		return second;
+	public int getSecond() {	//读取second的方法
+		return second;	//返回second
 	}
 
-	public void setSecond(int s) {
+	public void setSecond(int s) {	//setSecond方法
 		second = ((s >= 0 && s < 60) ? s : 0);	//若s为有效值，把s赋给
 	}
 
