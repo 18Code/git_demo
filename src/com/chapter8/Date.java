@@ -34,15 +34,15 @@ public class Date {
 		}
 		
 		if (month == 2 && testDay == 29 && (year % 400 == 0) || 
-				(year % 4 == 0 && year % 100 != 0)) {
-			return testDay;
+				(year % 4 == 0 && year % 100 != 0)) {	//检查月份是否为2月，天数是否为29天，年份是否是闰年
+			return testDay;	//如果是返回天数
 		}
-		System.out.println("Invalid day (" + testDay + ") set to 1.");
+		System.out.println("Invalid day (" + testDay + ") set to 1.");	//if条件都不满足，输出天数不合法，将天数置为1
 		
-		return 1;
+		return 1;	//返回标准天数值1
 	}
 	
-	public String toDateString() {
+	public String toDateString() {	//将日期转换为String字符串格式
 		return month + "/" + day + "/" + year;
 	}
 }
