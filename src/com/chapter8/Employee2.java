@@ -18,9 +18,10 @@ public class Employee2 {	//Employee2声明
 	
 
 
-	protected void finalize(){
-		--count;
-		System.out.println("Employee finalizer: "+firstName+" "+lastName+" ; count= "+count);
+	protected void finalize(){     //终结变量方法
+		--count;     //静态变量员工的数量－1
+		System.out.println("Employee finalizer: "+firstName+" "
+		+lastName+" ; count= "+count);    //输出终结变量，以及静态变量员工的数量
 		
 	}//end finalize
 	
