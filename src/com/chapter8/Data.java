@@ -15,15 +15,15 @@ public class Data {
 		}
 		
 		if (month == 2 && testDay == 29 && (year % 400 == 0) || 
-				(year % 4 == 0 && year % 100 != 0)) {
-			return testDay;
+				(year % 4 == 0 && year % 100 != 0)) {	//检查是否为闰年
+			return testDay;	//若是，返回天数
 		}
-		System.out.println("Invalid day (" + testDay + ") set to 1.");
+		System.out.println("Invalid day (" + testDay + ") set to 1.");	//输出天数不合法，将天数置为1
 		
-		return 1;
+		return 1;	//返回天数的标准值
 	}
 	
-	public String toDateString() {
-		return month + "/" + day + "/" + year;
+	public String toDateString() {	//toDateString方法
+		return month + "/" + day + "/" + year;	//返回日期的字符串格式
 	}
 }

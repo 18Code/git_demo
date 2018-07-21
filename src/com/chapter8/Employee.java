@@ -17,6 +17,6 @@ public class Employee {	//Employee类声明
 	public String toEmployeeString() {	//将Employee转换为String字符串格式
 		return lastName + ", " + firstName + 
 				" Hired: " + hireData.toDateString() +
-				" Birthday: " + brithData.toDateString();
+				" Birthday: " + brithData.toDateString();	
 	}
 }
