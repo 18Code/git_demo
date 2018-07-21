@@ -1,5 +1,6 @@
 package com.chapter8;
 
+
 public class Employee2 {	//Employee2声明
 
 	private String firstName;	//声明姓氏
@@ -15,4 +16,24 @@ public class Employee2 {	//Employee2声明
 				firstName + " " + lastName);	//打印员工信息
 	}
 	
-}
+
+
+	protected void finalize(){
+		--count;
+		System.out.println("Employee finalizer: "+firstName+" "+lastName+" ; count= "+count);
+		
+	}//end finalize
+	
+	public String getFirstName(){
+		return firstName; //返回firstName
+	}//end getFirstName
+	
+	public String getLastName(){
+		return lastName;   //返回lastName
+	}//end getLastName
+	
+	public static int getCount(){
+		return count;    //返回count
+	}
+}// end class Employee
+
