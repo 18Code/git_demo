@@ -5,9 +5,21 @@ import javax.swing.JOptionPane;
 public class EmployeeTest2 {
 
 	public static void main(String[] args) {
-		Employee2 e1 = new Employee("Susan","Baker");
-		Employee2 e2 = new Employee("Bob","Jones");
-		String output;
+		String output = "Employees beofre instantiation: " +
+				Employee2.getCount();
+		
+		Employee2 e1 = new Employee2("Susan","Baker");
+		Employee2 e2 = new Employee2("Bob","Jones");
+		
+		output += "\n\nEmployees after instantiation: " +
+				"\nvia e1.getCount(): " + e1.getCount() +
+				"\nvia e2.getCount(): " + e2.getCount() +
+				"\nvia Employee.getCount(): " + Employee2.getCount();
+		
+		output += "\n\nEmployee 1: " + e1.getFirstName() + 
+				" " + e1.getLastName() + "\n\nEmployee 2: " + e2.getFirstName() + 
+				" " + e2.getLastName();
+		
 		e1=null;
 		e2=null;
 		System.gc();
