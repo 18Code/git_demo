@@ -1,14 +1,16 @@
 package com.chapter8;
 
+
 import java.sql.Time;
 import java.text.DecimalFormat;
+
 
 public class Time3 {
 
 	public int hour;
 	public int minute;
 	public int second;
-	
+
 	public Time3() {
 		// TODO Auto-generated constructor stub
 		this(0, 0, 0);
@@ -77,4 +79,5 @@ public class Time3 {
 			twoDigits.format(getMinute()) + ":" + twoDigits.format(getSecond()) + 
 			(getHour() < 12 ? " AM" : " PM");	//返回标准时间
 	}
+
 }
