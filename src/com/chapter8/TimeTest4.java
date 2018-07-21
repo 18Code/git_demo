@@ -53,25 +53,25 @@ public class TimeTest4 extends JApplet implements ActionListener{
 		secondField.addActionListener(this);
 		tickButton.addActionListener(this);
 		
-		displayTime();
+		displayTime();	//调用displayTime
 		
 	}
 	
-	public void displayTime() {
+	public void displayTime() {		//displayTime方法
 		// TODO Auto-generated method stub
 		displayField.setText("Hour: " + time.getSecond() + "; Minute: " +
-				time.getMinute() + "; Second: " + time.getSecond());
+				time.getMinute() + "; Second: " + time.getSecond());	//将hour、minute、second的值显示在文本字段displayField中
 		
 		showStatus("Standard time is: " + time.toStandardString() + 
-				"; Universal time is: " + time.toUniversalString());
+				"; Universal time is: " + time.toUniversalString());	//将新时间作为字符串显示在applet的状态栏中
 	}
 	
 	
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {	//ActionEvent参数包含一个事件源的引用
 		// TODO Auto-generated method stub
-		if (e.getSource() == tickButton) {
+		if (e.getSource() == tickButton) {	//确定产生事件的GUI组件。确定用户是否单击tickButton，如果是，则执行if语句体
 			tick();
 		} 
 		else if (e.getSource() == hourField) {
@@ -87,10 +87,10 @@ public class TimeTest4 extends JApplet implements ActionListener{
 			secondField.setText("");
 		}
 		
-		displayTime();
+		displayTime();	//调用displayTime
 	}
 
-	public void tick() {
+	public void tick() {	//tick方法，使用新的设置和读取方法来正确地增加second的值
 		// TODO Auto-generated method stub
 		time.setSecond((time.getSecond() + 1) % 60);
 		
