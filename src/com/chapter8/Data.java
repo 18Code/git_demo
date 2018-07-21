@@ -19,7 +19,7 @@ public class Data {
 		return 1;
 	}
 	
-	public String toDataString() {
+	public String toDateString() {
 		return month + "/" + day + "/" + year;
 	}
 }
