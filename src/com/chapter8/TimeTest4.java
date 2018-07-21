@@ -65,7 +65,7 @@ public class TimeTest4 extends JApplet implements ActionListener{
 	
 	public void displayTime() {		//displayTime方法
 		// TODO Auto-generated method stub
-		displayField.setText("Hour: " + time.getSecond() + "; Minute: " +
+		displayField.setText("Hour: " + time.getHour() + "; Minute: " +
 				time.getMinute() + "; Second: " + time.getSecond());	//将hour、minute、second的值显示在文本字段displayField中
 		
 		showStatus("Standard time is: " + time.toStandardString() + 
