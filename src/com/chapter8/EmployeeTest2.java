@@ -6,8 +6,6 @@ public class EmployeeTest2 {
 
 	public static void main(String[] args) {
 
-		
-
 		String output = "Employees beofre instantiation: " +
 				Employee2.getCount();	//验证在创建Employee对象前，count值为0。将当前count值添加到output
 		
@@ -26,7 +24,6 @@ public class EmployeeTest2 {
 		e1=null;
 		e2=null;          //将e1、e2赋值为null
 		System.gc();     //调用垃圾回收处理机制
-
 		
 		output+="\n\nEmployee after System.gc(): "
 		    +Employee2.getCount();   //输出调用垃圾回收处理之后的静态变量员工数量		
