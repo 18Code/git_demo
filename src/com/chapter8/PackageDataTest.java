@@ -1,23 +1,4 @@
 package com.chapter8;
-<<<<<<< HEAD
-public class PackageDataTest {
-
-}
-
-class PackageData {
-	int number;
-	String string;
-	
-	public PackageData() {
-		number = 0;
-		string = "Hello";
-	}
-	
-	public String toPackageDataString() {
-		return "number: " + number + "  string: " + string;
-	}
-}
-=======
 
 import javax.swing.JOptionPane;
 
@@ -43,4 +24,18 @@ public class PackageDataTest {
 	}//end main
 
 }//end class PackageDataTest
->>>>>>> branch 'master' of https://github.com/18Code/git_demo.git
+
+class PackageData {	//声明PackageData类
+	int number;	//数字值
+	String string;	//字符串值	
+	
+	
+	public PackageData() {	//构造方法
+		number = 0;	//number赋值0
+		string = "Hello";	//string赋值Hello
+	}
+	
+	public String toPackageDataString() {	//toPackageDataString方法
+		return "number: " + number + "  string: " + string;	//返回PackageData对象的字符串表示
+	}
+}
