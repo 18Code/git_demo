@@ -1,5 +1,6 @@
 package com.chapter8;
 
+
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,3 +27,24 @@ public class IncrementTest extends JApplet implements ActionListener{
 	}//end actionPerformed
 
 }//end class Increment
+
+
+class Increment {
+	private int count = 0;
+	private int total = 0;
+	private final int INCREMENT;
+	
+	public Increment(int incrementValue) {
+		INCREMENT = incrementValue;
+	}
+	
+	public void increment() {
+		total += INCREMENT;
+		++count;
+	}
+	
+	public String toIncrementString() {
+		return "After increment " + count + ": total = " + total;
+	}
+}
+
