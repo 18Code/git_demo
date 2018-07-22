@@ -98,13 +98,13 @@ public class TimeTest4 extends JApplet implements ActionListener{
 
 	public void tick() {	//tick方法，使用新的设置和读取方法来正确地增加second的值
 		// TODO Auto-generated method stub
-		time.setSecond((time.getSecond() + 1) % 60);
+		time.setSecond((time.getSecond() + 1) % 60);	//second的值加1，如果加1后等于60，置0
 		
-		if (time.getSecond() == 0) {
-			time.setMinute((time.getMinute() + 1) % 60);
+		if (time.getSecond() == 0) {	//如果加1后second值为0
+			time.setMinute((time.getMinute() + 1) % 60);	//minute执行加1操作，如果加1后等于60，置0
 			
-			if (time.getMinute() == 0) {
-				time.setHour((time.getHour() + 1) % 24);
+			if (time.getMinute() == 0) {	//如果加1后minute值为0
+				time.setHour((time.getHour() + 1) % 24);	//hour加1，如果加1后等于24，置0
 			}
 		}
 	}
