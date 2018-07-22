@@ -78,18 +78,18 @@ public class TimeTest4 extends JApplet implements ActionListener{
 	public void actionPerformed(ActionEvent e) {	//ActionEvent参数包含一个事件源的引用
 		// TODO Auto-generated method stub
 		if (e.getSource() == tickButton) {	//确定产生事件的GUI组件。确定用户是否单击tickButton，如果是，则执行if语句体
-			tick();
+			tick();	//调用tick方法
 		} 
-		else if (e.getSource() == hourField) {
-			time.setHour(Integer.parseInt(e.getActionCommand()));
+		else if (e.getSource() == hourField) {	//是否响应了hourField的事件
+			time.setHour(Integer.parseInt(e.getActionCommand()));	//如果是，将hour的值设置为用户输入的值
 			hourField.setText("");
 		}
-		else if (e.getSource() == minuteField) {
-			time.setMinute(Integer.parseInt(e.getActionCommand()));
+		else if (e.getSource() == minuteField) {	//是否响应了minuteField的事件
+			time.setMinute(Integer.parseInt(e.getActionCommand()));	//如果是，将minute的值设置为用户输入的值
 			minuteField.setText("");
 		}
-		else if (e.getSource() == secondField) {
-			time.setSecond(Integer.parseInt(e.getActionCommand()));
+		else if (e.getSource() == secondField) {	//是否响应了secondField的事件
+			time.setSecond(Integer.parseInt(e.getActionCommand()));	//如果是，将second的值设置为用户输入的值
 			secondField.setText("");
 		}
 		
