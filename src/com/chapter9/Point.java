@@ -31,7 +31,7 @@ public class Point {	//声明Point类，代表xy轴坐标对
 	}
 
 	@Override
-	public String toString() {      //toString方法，构造坐标对输出格式
+	public String toString() {      //toString方法，构造坐标对输出格式，返回坐标对的string表示
 		return "[" + x + ", " + y + "]";
 	}
 	
