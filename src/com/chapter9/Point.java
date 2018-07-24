@@ -9,6 +9,7 @@ public class Point {	//声明Point类，代表xy轴坐标对
 	}
 	
 	public Point(int xValue, int yValue) {	//带两个参数的构造方法
+		//隐式地调用超类Object的默认构造函数
 		x = xValue;	//x赋值为xValue
 		y = yValue;	//y赋值为yValue
 	}
