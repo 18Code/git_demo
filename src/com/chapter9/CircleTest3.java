@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class CircleTest3 {
+
 	public static void main(String[] args) {
 		Circle3 circle = new Circle3(37,43,2.5); //实例化一个Circle对象，调用含参的构造方法 
 		 
@@ -31,9 +32,7 @@ public class CircleTest3 {
 		
 		System.exit(0);
 		
-		
-		
 
-		
 	}
+
 }
