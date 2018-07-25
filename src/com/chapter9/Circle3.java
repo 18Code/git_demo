@@ -24,7 +24,7 @@ public class Circle3 extends Point2{
 	public double getDiameter(){   //声明计算直径的方法
 		return 2*radius;    //返回直径
 	}
-	public double getCircumference(){    //声明计算周长的方法
+	public double getCircleference(){    //声明计算周长的方法
 		return Math.PI*getDiameter();     //返回周长
 	}
 	public double getArea(){             //声明计算面积的方法
