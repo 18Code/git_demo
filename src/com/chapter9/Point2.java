@@ -2,7 +2,7 @@ package com.chapter9;
 
 public class Point2 {	//声明Point2类，代表xy轴坐标对
 	protected int x;	//在x轴上的值
-	protected int y;	//在y轴上的值
+	protected int y;	//在y轴上的值,将实例变量x和y声明为protected
 	
 	public Point2() {	//无参构造方法
 		//此处发生对Object构造方法的隐式调用
