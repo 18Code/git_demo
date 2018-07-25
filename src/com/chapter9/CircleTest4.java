@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class CircleTest4 {
 	public static void main(String[] args) {
-		Circle3 circle = new Circle3(37,43,2.5); //实例化一个Circle对象，调用含参的构造方法 
+		Circle4 circle = new Circle4(37,43,2.5); //实例化一个Circle对象，调用含参的构造方法 
 		 
 		//构造output输出字符串，调用get方法，输出圆心坐标和直径
 		String output = "X coordinate is "+circle.getX()+
