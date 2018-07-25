@@ -3,14 +3,14 @@ package com.chapter9;
 public class Circle {
 	private int x;   //声明私有变量--x坐标
 	private int y;   //声明私有变量--y坐标
-	private double radius;    //声明私有变量---直径
+	private double radius;    //声明私有变量---半径
 	
 	public Circle(){
 		//无参的构造方法，此处隐式调用Object的构造方法
 	}
 	
 	public Circle(int xValue,int yValue,double radiusValue){ //带三个参数的构造方法
-		x = xValue;    //x赋值为先Value
+		x = xValue;    //x赋值为xValue
 		y = yValue;    //y赋值为yValue
 		setRadius(radiusValue);    //调用setRadius设置radius
 	}
