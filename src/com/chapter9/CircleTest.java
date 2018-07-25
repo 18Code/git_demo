@@ -2,6 +2,8 @@ package com.chapter9;
 
 import java.text.DecimalFormat;
 
+import javax.swing.JOptionPane;
+
 public class CircleTest {
 	public static void main(String[] args) {
 		Circle circle = new Circle(37,43,2.5); //实例化一个Circle对象，调用含参的构造方法 
@@ -20,6 +22,18 @@ public class CircleTest {
 		
 		//格式化数字为两位小数形式
 		DecimalFormat twoDigits = new DecimalFormat("0.00");
+
+		output += "\nDiameter is " + twoDigits.format(circle.getDiameter());	//获得圆的直径，将值拼接到output
+		output += "\nCircleference is " + twoDigits.format(circle.getCircleference());	//获得圆的周长，将值拼接到output
+		output += "\nArea is " + twoDigits.format(circle.getArea());	//获得圆的面积，将值拼接到output
+		
+		JOptionPane.showMessageDialog(null, output);	//输出output
+		
+		System.exit(0);
+		
+		
+		
+
 		
 	}
 
