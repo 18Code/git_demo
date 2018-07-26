@@ -35,7 +35,7 @@ public class CylinderTest {
 		//将输出字符串显示在对话框中
 		JOptionPane.showMessageDialog(null, output);
 				
-				System.exit(0);
+		System.exit(0);
 	}
 
 }

@@ -1,21 +1,6 @@
 package com.chapter9;
 
-public class Circle4 extends Point3{
-	private double radius;    //声明私有变量---半径
-
-	public Circle4() {	//无参构造函数
-		//Point构造方法的隐式调用
-	}
-	
-	public Circle4(int xValue, int yValue, double radiusValue) {	//带三个参数的构造方法
-		super(xValue, yValue);	//调用Point3的有参构造函数
-		setRadius(radiusValue);    //调用setRadius设置radius
-	}
-	
-	public void setRadius(double radiusValue) {	//setRadius方法，设置圆半径
-		radius = (radiusValue < 0.0 ? 0.0 : radiusValue);	//如果radiusValue值小于0，radius置为0；不小于0，radius置为radiusValue
-	}
-
+public class Circle5 {
 	public double getRadius() {	//getRadius方法
 		return radius;	//返回radius
 	}
