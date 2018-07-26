@@ -5,7 +5,7 @@ public class Point4 {	//声明Point类，代表xy轴坐标对
 	private int y;	//在y轴上的值
 	
 	public Point4() {	//无参构造方法
-		System.out.println("Point4 no-argument constructor: " + this);	//打印Point4对象调用了无参构造函数
+		System.out.println("Point4 no-argument constructor: " + this);	//将this连接到一个字符串隐式地调用对象的toString方法，以获取对象的字符串表示。打印Point4对象调用了无参构造函数
 	}
 	
 	public Point4(int xValue, int yValue) {	//带两个参数的构造方法
