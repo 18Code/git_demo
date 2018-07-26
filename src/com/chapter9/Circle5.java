@@ -12,11 +12,11 @@ public class Circle5 extends Point4{
 		super(xValue,yValue);    //调用父类的构造方法
 		setRadius(radiusValue);   //调用setRadius方法，设置radius的值
 		
-		System.out.println("Circle constructor:"+this);    //输出提示信息
+		System.out.println("Circle constructor:"+this);    //输出提示信息，将this与字符串相连，以获取对象的字符串表示
 	}
 	
 	protected void finalize(){    //子类中的终结方法
-		System.out.println("Circle finalizer: "+this);   //输出提示信息
+		System.out.println("Circle finalizer: "+this);   //输出提示信息，将this与字符串相连，以获取对象的字符串表示
 		
 		super.finalize();    //调用父类中的终结方法
 	}
