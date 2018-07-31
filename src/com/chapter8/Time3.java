@@ -7,28 +7,29 @@ import java.text.DecimalFormat;
 
 public class Time3 {
 
-	public int hour;	
-	public int minute;
-	public int second;
+	public int hour;	//声明公有变量hour
+	public int minute;  //声明公有变量minute
+	public int second;  //声明公有变量second
 
-	public Time3() {
+	public Time3() {    //不含参的构造方法
 		// TODO Auto-generated constructor stub
-		this(0, 0, 0);
+		this(0, 0, 0);   //将0作为hour、minute、second的值
 	}
 	
-	public Time3(int h) {
-		this(h, 0, 0);
+	public Time3(int h) {   //含一个参数的构造函数
+		this(h, 0, 0);    //接收代表hour的单个int型参数，将0作为minute和second的值，传递给Time3(int h, int m, int s)
 	}
 
-	public Time3(int h, int m) {
-		this(h, m, 0);
+	public Time3(int h, int m) {   //含两个参数的构造函数
+		this(h, m, 0);     //两个参数分别代表hour和minute，0作为second的值
 	}
 	
-	public Time3(int h, int m, int s) {
-		setTime(h, m, s);
+	public Time3(int h, int m, int s) {  //含三个参数的构造函数
+		setTime(h, m, s);             //调用setTime方法设置参数
 	}
 
-	public Time3(Time3 time) {
+	public Time3(Time3 time) {     //将Time3类型的实例当做构造方法参数
+		//通过get方法获取参数的值
 		this(time.getHour(), time.getMinute(), time.getSecond());
 	}
 	
