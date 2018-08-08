@@ -1,12 +1,12 @@
 package com.chapter10;
 
-public class Circle extends Point{
+public class Circle1 extends Point1{
 	private double radius;   //声明私有变量radius
-	public Circle() {	//无参构造函数
+	public Circle1() {	//无参构造函数
 		//Point构造方法的隐式调用
 	}
 	
-	public Circle(int xValue, int yValue, double radiusValue) {	//带三个参数的构造方法
+	public Circle1(int xValue, int yValue, double radiusValue) {	//带三个参数的构造方法
 		super(xValue, yValue);	//调用Point的有参构造函数
 		setRadius(radiusValue);    //调用setRadius设置radius
 	}
