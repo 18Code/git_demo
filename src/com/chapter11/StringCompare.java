@@ -18,7 +18,7 @@ public class StringCompare {
 				"\ns3.compareTo( s4 ) is " + s3.compareTo( s4 ) +
 				"\ns4.compareTo( s3 ) is " + s4.compareTo( s3 ) + "\n\n";
 		
-		//测试regionMacthes函数，区分大小写
+		//测试regionMacthes函数，比较两个字符串的局部是否相等，区分大小写
 		if ( s3.regionMacthes( 0, s4, 0, 5 ) )
 			output += "First 5 characters of s3 and s4 match\n";
 		else
