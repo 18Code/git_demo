@@ -18,6 +18,7 @@ public class TimeTestWindow extends JFrame {
 
 	//设置图形用户界面
 	public TimeTestWindow() {  //构造方法
+		
 		super("Inner Class Demonstration");    //调用超类的构造方法
 
 		time = new Time();    //实例化time变量
