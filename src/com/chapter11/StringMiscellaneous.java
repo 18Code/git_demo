@@ -8,7 +8,7 @@ public class StringMiscellaneous {
 		//测试length方法
 		output += "\nLength of s1: " + s1.length();
 		
-		//遍历s1中的所有字符并逆序表示
+		//遍历s1中的所有字符并逆序显示出来
 		output += "\nThe string reversed is: "; 
 	}
 
