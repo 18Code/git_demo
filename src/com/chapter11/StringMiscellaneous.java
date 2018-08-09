@@ -12,7 +12,7 @@ public class StringMiscellaneous {
 		output += "\nThe string reversed is: "; 
 		
 		for ( int count = s1.length() - 1; count >= 0; count-- )
-			output += s1.charAt( count ) + " ";
+			output += s1.charAt( count ) + " ";//charAt方法返回字符串s1中指定位置的字符
 	}
 
 }
