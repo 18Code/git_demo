@@ -16,6 +16,7 @@ public class TimeTestWindow extends JFrame {
 	private JTextField hourField, minuteField, secondField, displayField;   //声明JTextField的引用，用来存放用户输入
 	private JButton exitButton;    //声明一个JButton的引用，用来监听用户操作
 
+	//设置图形用户界面
 	public TimeTestWindow() {  //构造方法
 		super("Inner Class Demonstration");    //调用超类的构造方法
 
