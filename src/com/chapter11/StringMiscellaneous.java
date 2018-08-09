@@ -10,6 +10,9 @@ public class StringMiscellaneous {
 		
 		//遍历s1中的所有字符并逆序显示出来
 		output += "\nThe string reversed is: "; 
+		
+		for ( int count = s1.length() - 1; count >= 0; count-- )
+			output += s1.charAt( count ) + " ";
 	}
 
 }
