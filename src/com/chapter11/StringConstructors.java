@@ -32,6 +32,5 @@ public class StringConstructors {
 			JOptionPane.INFORMATION_MESSAGE );
 		
 		System.exit( 0 ); // 退出程序
-	}
-
-}
+	} // end method main
+} // end class StringConstructors
