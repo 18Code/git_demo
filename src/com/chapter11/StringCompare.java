@@ -5,12 +5,26 @@ import javax.swing.JOptionPane;
 public class StringCompare {
 	
 	public static void main(String[] args) {
-		String s1="";
-		String s2="";
-		String s3="";
-		String s4="";
-		String output = "";
-		//这里是书上第30行
+		String s1=new String("hello");
+		String s2="goodbye";
+		String s3="Happy Birthday";
+		String s4="happy birthday";
+	
+		String output = "s1 = " + s1 + "\ns2 = " + s2 + "\ns3 = " + s3 +
+				"\ns4 = " + s4 + "\n\n";
+
+		if (s1.equals("hello")) {	//if-else语句，使用equals方法来比较字符串s1是否与字符串常量“hello”相等，级判断两个对象所存储的字符串是否完全相同
+			output += "s1 equals \"hello\"\n";	//若相等，将s1等于hello的字符串添加到output
+		} else {
+			output += "s1 does not equals \"hello\"\n";	//若不相等，将s1不等于hello的字符串添加到output
+		}
+		
+		if (s1 == "hello") {	//if-else语句，使用==运算符来比较字符串s1是否与字符串常量“hello”相等，即两个引用指向内存中的同一个对象
+			output += "s1 equals \"hello\"\n";	//若相等，将s1等于hello的字符串添加到output
+		} else {
+			output += "s1 does not equals \"hello\"\n";	//若不相等，将s1不等于hello的字符串添加到output
+		}
+		
 		//测试相等函数（忽略大小写）
 		if (s3.equalsIgnoreCase( s4 ) )//为真
 			output += "s3 equals s4\n";

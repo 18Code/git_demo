@@ -20,8 +20,9 @@ public class StringMiscellaneous {
 		s1.getChars( 0, 5, charArray, 0 );   //获取指定字符串，将一个字符串的多个字符复制到一个字符数组中
 		output+="The character array is:";
 		
-		// 公feifei：27~30
-		
+		for (int count = 0; count < charArray.length; count++) {	//for循环
+			output += charArray[count];	//将数组charArray的内容一个字符一个字符地添加到output字符串中，以供显示
+		}
 		
 		// 将output输出
 		JOptionPane.showMessageDialog( null, output, 
