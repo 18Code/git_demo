@@ -12,9 +12,14 @@ public class StringStartEnd {
 				output += "\"" + strings[count] + "\" starts with \"st\"\n";
 			}
 		}
+		
+		output += "\n";
+		
 		//测试函数endWith
-		for ( int count = 0; count < string.length; count++ ){
-			output += "\"" + strings[ count ] + "\" ends with \"ed\"\n";
+		for ( int count = 0; count < strings.length; count++ ){
+			if (strings[count].endsWith("ed")) {
+				output += "\"" + strings[ count ] + "\" ends with \"ed\"\n";
+			}
 			
 		}
 		
