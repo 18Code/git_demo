@@ -22,7 +22,16 @@ public class StringConstructors {
 		String s6 = new String(byteArray);   //用以一个byte数组为参数的String类构造函数，实例化一个对象，新对象中包含数组中字节的副本
 		
 		//截止22行
+		// 创建一个String变量output，把s1~s6字符串加到该变量
+		String output = "s1 = " + s1 + "\ns2 = " + s2 + "\ns3 = " + s3 +
+			"\ns4 = " + s4 + "\ns5 = " + s5 + "\ns6 = " + s6;
 		
+		// 将output放入消息栏展示出来
+		JOptionPane.showMessageDialog( null, output,
+			"String Class Constructors", 
+			JOptionPane.INFORMATION_MESSAGE );
+		
+		System.exit( 0 ); // 退出程序
 	}
 
 }
