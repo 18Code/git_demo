@@ -5,11 +5,32 @@ import javax.swing.JOptionPane;
 public class StringCompare {
 	
 	public static void main(String[] args) {
-		String s1="";
-		String s2="";
-		String s3="";
-		String s4="";
+		
+		// 公feifei：只声明了，需对下面的字符串变量进行赋值
+		String s1 = "";
+		String s2 = "";
+		String s3 = "";
+		String s4 = "";
+		
 		String output = "";
+		
+		// from 17-27 equlas方法比较内容， == 比较对象
+		// 测试字符串内容是否相等相等（匹配）
+		// 如果s1与字符串"hello"匹配，将"s1 equals 'hello'"连接到output中
+		// 否则将"s1 does not equal 'hello'"连接到output中
+		if ( s1.equals( "hello" ) ) // 内容一致，为真
+			output += "s1 equals \"hello\"\n";
+		else
+			output += "s1 does not equals \"hello\"\n";
+		
+		// 用 == 测试字符串对象是否相等
+		// 如果s1指向的字符串对象与字符串该"hello"对象相同，则将"s1 equals 'hello'"连接到output中
+		// 否则将"s1 does not equal 'hello'"连接到output中
+		if ( s1 == "hello" )  // false，他们两个不是同一个对象
+			output += "s1 equals \"hello\"\n";
+		else
+			output += "s1 does not equals \"hello\"\n";
+ 		
 		//这里是书上第30行
 		//测试相等函数（忽略大小写）
 		if (s3.equalsIgnoreCase( s4 ) )//为真
@@ -38,7 +59,5 @@ public class StringCompare {
 		
 		System.exit(0);
 	}
-	
-	
 
 }
