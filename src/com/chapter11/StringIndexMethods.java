@@ -22,18 +22,23 @@ public class StringIndexMethods {
 		// 测试lastIndexOf方法：在字符串中寻找一个子串
 		// lastIndexOf,从后往前对字符串执行查找操作
 		// 从letters字符串中从最后一个位置往前查找子串"def",并返回子串起始的位置
-		output += "\n\nLast \"def\" is located at index " + letters.lastIndexOf("def");
+		output += "\n\nLast \"def\" is located at index " 
+			+ letters.lastIndexOf( "def" );
 
 		// 从letters字符串中从第25个位置往前查找子串"def",并返回子串起始的位置
-		output += "\n\nLast \"def\" is located at index " + letters.lastIndexOf("def", 25);
+		output += "\n\nLast \"def\" is located at index "
+			+ letters.lastIndexOf( "def", 25 );
 
 		// 从letters字符串中从最后一个位置往前查找子串"def",并返回子串起始的位置,找不到返回-1
-		output += "\n\nLast \"def\" is located at index " + letters.lastIndexOf("hello");
+		output += "\n\nLast \"def\" is located at index " 
+			+ letters.lastIndexOf( "hello" );
 
 		// 打印消息栏
-		JOptionPane.showMessageDialog(null, output, "String searching methods", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog( null, output, 
+			"String searching methods", 
+			JOptionPane.INFORMATION_MESSAGE );
 
-		System.exit(0); // terminate application
+		System.exit( 0 ); // terminate application
 
 	} // end method main
 } // end class StringIndexMethods
