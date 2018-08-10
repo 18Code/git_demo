@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 public class StringCompare {
 	
 	public static void main(String[] args) {
-		String s1=new String("hello");
+		String s1=new String("hello");	//声明并初始化String变量s1，s2，s3，s4
 		String s2="goodbye";
 		String s3="Happy Birthday";
 		String s4="happy birthday";
 	
 		String output = "s1 = " + s1 + "\ns2 = " + s2 + "\ns3 = " + s3 +
-				"\ns4 = " + s4 + "\n\n";
+				"\ns4 = " + s4 + "\n\n";	//声明output字符串变量，将s1，s2，s3，s4字符串的值添加到output
 
 		if (s1.equals("hello")) {	//if-else语句，使用equals方法来比较字符串s1是否与字符串常量“hello”相等，级判断两个对象所存储的字符串是否完全相同
 			output += "s1 equals \"hello\"\n";	//若相等，将s1等于hello的字符串添加到output
