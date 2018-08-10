@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 public class StringCompare {
 	
 	public static void main(String[] args) {
-<<<<<<< HEAD
 		String s1=new String("hello");
 		String s2="goodbye";
 		String s3="Happy Birthday";
@@ -44,7 +43,7 @@ public class StringCompare {
 			output += "s1 does not equals \"hello\"\n";
  		
 		//这里是书上第30行
->>>>>>> branch 'master' of https://github.com/18Code/git_demo.git
+
 		//测试相等函数（忽略大小写）
 		if (s3.equalsIgnoreCase( s4 ) )//为真
 			output += "s3 equals s4\n";
