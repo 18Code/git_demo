@@ -15,6 +15,15 @@ public class StringStartEnd {
 		
 		output += "\n";	//添加换行符到output
 		
+		// 从字符串下标为2开始测试startWith方法
+		for ( int count = 0; count < strings.length; count++ ) //遍历数组strings
+			// 找出strings数组中在下标2位置以"art"开始的字符串
+			if ( strings[ count ].startsWith( "art", 2 ) )
+				output += "\"" + strings[ count ] +
+					"\" starts with \"art\" at position 2\n";
+				
+		output += "\n"; // 空一行
+		
 		//测试函数endWith
 		for ( int count = 0; count < strings.length; count++ ){
 			if (strings[count].endsWith("ed")) {
