@@ -81,13 +81,10 @@ public class TimeTestWindow2 extends JFrame {
 	}//end method displayTime
 	public static void main(String args[]){
 		TimeTestWindow2 window = new TimeTestWindow2();
-		window.addWindowListener(new WindowAdapter() {
+		window.addWindowListener(new WindowAdapter() { 
 		public void windowClosing(WindowEvent event){
 			System.exit(0);
 		}//end method windowClosing
-			
-			
-			
 					}//end anonymous inner class
 		);//end call to addWindowListener for window
 		window.setSize(400, 105);
