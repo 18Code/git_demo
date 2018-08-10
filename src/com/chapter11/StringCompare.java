@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class StringCompare {
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		String s1=new String("hello");
 		String s2="goodbye";
 		String s3="Happy Birthday";
@@ -25,6 +26,25 @@ public class StringCompare {
 			output += "s1 does not equals \"hello\"\n";	//若不相等，将s1不等于hello的字符串添加到output
 		}
 		
+		// from 17-27 equlas方法比较内容， == 比较对象
+		// 测试字符串内容是否相等相等（匹配）
+		// 如果s1与字符串"hello"匹配，将"s1 equals 'hello'"连接到output中
+		// 否则将"s1 does not equal 'hello'"连接到output中
+		if ( s1.equals( "hello" ) ) // 内容一致，为真
+			output += "s1 equals \"hello\"\n";
+		else
+			output += "s1 does not equals \"hello\"\n";
+		
+		// 用 == 测试字符串对象是否相等
+		// 如果s1指向的字符串对象与字符串该"hello"对象相同，则将"s1 equals 'hello'"连接到output中
+		// 否则将"s1 does not equal 'hello'"连接到output中
+		if ( s1 == "hello" )  // false，他们两个不是同一个对象
+			output += "s1 equals \"hello\"\n";
+		else
+			output += "s1 does not equals \"hello\"\n";
+ 		
+		//这里是书上第30行
+>>>>>>> branch 'master' of https://github.com/18Code/git_demo.git
 		//测试相等函数（忽略大小写）
 		if (s3.equalsIgnoreCase( s4 ) )//为真
 			output += "s3 equals s4\n";
@@ -52,7 +72,5 @@ public class StringCompare {
 		
 		System.exit(0);
 	}
-	
-	
 
 }
