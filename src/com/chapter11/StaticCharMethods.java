@@ -1,16 +1,31 @@
 package com.chapter11;
 
+import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 // 11.15
 public class StaticCharMethods extends JFrame {
 	// feifei from 8 to 23
 	private char c;
+	private JLabel promptLabel;
+	private JTextField inputField;
+	private JTextArea outputArea;
 	public StaticCharMethods(){
+		super("Static Character Methods");
 		
+		Container container = getContentPane();
+		container.setLayout(new FlowLayout());
+		
+		promptLabel = new JLabel("Enter a character and press Enter");
+		container.add(promptLabel);
+		inputField = new JTextField(5);
 		
 		inputField.addActionListener(
 			new ActionListener() { // 创建继承ActionListener匿名内部类
@@ -43,7 +58,7 @@ public class StaticCharMethods extends JFrame {
 				"\nis first character in a Java identifier: " + Character.isJavaIdentifierStart(c) +//确定c是否能作为java标识符的第一个字符
 				"\nis part of a Java identifier: " + Character.isJavaIdentifierPart(c) +//确定c是否能作为java标识符的字符
 				"\nis letter: " + Character.isLetter(c) + //确定c是否为一个字母
-				"\nis letter or digit: " + Character.isLetterOrDigit(c) +//确定c是一个字母还是一个数字
+				"\nis letter or digit: " + Character.isLetterOrDigit(c) +//确定c是否为一个字母或者一个数字中的一种
 				"\nis lower case: " + Character.isLowerCase(c) +//确定c是否为一个小写字母
 				"\nis upper case: " + Character.isUpperCase(c) +//确定c是否为一个大写字母
 				"\nto upper case: " + Character.toUpperCase(c) +//将c转换为大写字母
