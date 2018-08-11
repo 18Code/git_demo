@@ -1,5 +1,10 @@
 package com.chapter11;
+
 //11.12
+
+
+import javax.swing.JOptionPane;
+
 public class StringBufferChars {
 	public static void main(String[] args) {
 		// shasha
@@ -21,8 +26,15 @@ public class StringBufferChars {
 		buffer.setCharAt( 6, 'T' ); // 将buffer指向的字符串6位置字符替换为'T' 
 		output += "\n\nbuf = " + buffer.toString(); // 将更改后buffer连接到output
 		
-		// hongjian
-		
+		// 输出
+		JOptionPane.showMessageDialog( null, output,
+			"StringBuffer character methods", 
+			JOptionPane.INFORMATION_MESSAGE );
+		System.exit( 0 ); // terminate application
 	}
 
 }
+
+		
+	
+
