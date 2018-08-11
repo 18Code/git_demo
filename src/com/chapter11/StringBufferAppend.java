@@ -2,7 +2,8 @@ package com.chapter11;
 //11.13
 public class StringBufferAppend {
 	public static void main(String[] args) {
-		//书11行
+		Object objectRef = "hello";
+		String string = "goodbye";
 		char charArray[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
 		boolean booleanValue = true;
 		char characterValue = 'Z';
@@ -12,6 +13,18 @@ public class StringBufferAppend {
 		double doubleValue = 33.333;
 		StringBuffer lastBuffer = new StringBuffer( "last StringBuffer" );
 		StringBuffer buffer = new StringBuffer();
+		//21-28
+		buffer.append(objectRef);
+		buffer.append(" ");
+		buffer.append(string);
+		buffer.append(" ");
+		buffer.append(charArray);
+		buffer.append(" ");
+		buffer.append(charArray, 0, 3);
+		buffer.append(" ");
+		//29-38 feifei
+		//39-end wu
+		
 	}
 
 }

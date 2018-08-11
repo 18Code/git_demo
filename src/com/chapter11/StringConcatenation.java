@@ -16,10 +16,10 @@ public class StringConcatenation {
 		output += "\n\nResult of s1.concat( s2 ) = " + s1.concat( s2 );
 		//输出进行连接操作后的s1---连接操作并 不改变原有字符串
 		output += "\ns1 after concatenation = " + s1;
-		
+
 		//将输出字符串添加到对话框中
 		JOptionPane.showMessageDialog(null, output,"String method concat",JOptionPane.INFORMATION_MESSAGE);
-	
+
 		System.exit( 0 ); // terminate application
 		
 	} // end method main
