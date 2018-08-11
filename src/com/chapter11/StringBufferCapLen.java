@@ -7,8 +7,9 @@ public class StringBufferCapLen {
 		StringBuffer buffer = new StringBuffer( "" );
 		String output = "";
 		
-		// 保证buffer指向的对象有至少75个字符的容量
+		// 设置buffer对象的容量，若参数大于原容量的二倍加上2，则更改容量，否则不变
 		buffer.ensureCapacity( 75 );
+		// 获取buffer的容量
 		output += "\n\nNew capacity = " + buffer.capacity();
 		
 		//书17行
