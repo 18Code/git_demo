@@ -36,7 +36,7 @@ public class StaticCharMethods extends JFrame {
 		
 	// hu
 	
-	s
+	
 	// shasha
 		
 	
