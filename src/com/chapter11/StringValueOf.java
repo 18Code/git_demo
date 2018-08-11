@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 //11.9
 public class StringValueOf {
 	public static void main(String[] args) {
+		//声明各种基本类型的变量，用来测试StringValueOf方法
 		char charArray[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
 		boolean booleanValue = true;
 		char characterValue = 'Z';
@@ -13,8 +14,8 @@ public class StringValueOf {
 		
 		
 		// shasha 
-		float floatValue = 0.0f ;
-		double doubleValue = 0.0;
+		float floatValue = 2.5f ;
+		double doubleValue = 33.333;
 		
 		// feifei
 		Object objectRef = "";
@@ -22,7 +23,7 @@ public class StringValueOf {
 		// 将用String类静态方法valueOf获取基本类型的字符串表示
 		// 以及对象的字符串表示，对于数组，带一个参数则返回数组中所有的字符组成的新的String对象
 		// 下面的第二个带三个参数，第一个表示字符数组参数，第二个参数表示从
-		// 下标为3开始，第三个参数表示返回爹字符个数，这里表示从下标3开始，将数组
+		// 下标为3开始，第三个参数表示返回的字符个数，这里表示从下标3开始，将数组
 		// 后面三个字符组成新的String对象返回
 		String output = "char array = " + String.valueOf( charArray ) +
 			"\npart of char array = " + String.valueOf( charArray, 3, 3 ) +

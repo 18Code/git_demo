@@ -1,8 +1,11 @@
 package com.chapter11;
 //11.11
 
+import javax.swing.JOptionPane;
+
 public class StringBufferCapLen {
 	public static void main(String[] args) {
+
 		// feifei
 		StringBuffer buffer = new StringBuffer( "" );
 		String output = "";
@@ -11,13 +14,16 @@ public class StringBufferCapLen {
 		buffer.ensureCapacity( 75 );
 		// 获取buffer的容量
 		output += "\n\nNew capacity = " + buffer.capacity();
-		
+
 		//书17行
 		buffer.setLength( 10 );
 		output += "\n\nNew length = " + buffer.length() +
 				"\nbuf = " + buffer.toString();
 		
-		//shasha
+
+		JOptionPane.showMessageDialog(null, output,"StringBuffer length and capacity Methods",
+				JOptionPane.INFORMATION_MESSAGE);
+	
 	}
 
 }

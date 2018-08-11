@@ -6,11 +6,11 @@ import javax.swing.JOptionPane;
 public class StringMiscellaneous2 {
 	public static void main(String[] args) {
 		// shasha from 9 to 13
-		String s1 = "";
-		String s2;
-		String s3 = "";
+		String s1 = new String("hello");   //声明三个String对象并把它们的引用赋给s1、s2、s3
+		String s2 = new String("GOODBYE");
+		String s3 = new String("  spaces  ");
 		
-		String output = "";
+		String output = "s1= "+ s1 +"\ns2= "+ s2 +"\ns3=" + s3;
 		
 		// feifei from 15 to 21
 		
