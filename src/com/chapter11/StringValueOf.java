@@ -18,7 +18,7 @@ public class StringValueOf {
 		double doubleValue = 33.333;
 		
 		// feifei
-		Object objectRef = "";
+		Object objectRef = "hello";	//创建Object对象objectRef。所有的Object型对象都可以使用toString方法转换为String对象
 		
 		// 将用String类静态方法valueOf获取基本类型的字符串表示
 		// 以及对象的字符串表示，对于数组，带一个参数则返回数组中所有的字符组成的新的String对象
