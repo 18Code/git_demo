@@ -2,7 +2,8 @@ package com.chapter11;
 //11.14
 public class StringBufferInsert {
 	public static void main(String[] args) {
-		//书上20行
+		//wu
+		//书上20行---hu
 		buffer.insert( 0, objectRef );
 		buffer.insert( "  " );
 		buffer.insert( 0, string );
@@ -17,6 +18,13 @@ public class StringBufferInsert {
 		buffer.insert( "  " );
 		buffer.insert( 0, integerValue );
 		buffer.insert( "  " );
+		buffer.insert( 0 ,longValue);   
+		buffer.insert( "  " );
+		buffer.insert( 0 ,floatValue);
+		buffer.insert( "  " );
+		buffer.insert( 0,doubleValue);
+		
+		String output = "buffer after inserts:\n"+buffer.toString();  //将添加内容后的buffer输出
 		
 	}
 
