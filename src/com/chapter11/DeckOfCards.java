@@ -12,6 +12,21 @@ public class DeckOfCards extends JFrame {
 		// TODO Auto-generated constructor stub
 		Container container = getContentPane();
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//hu
 		//78~105
 		container.add(shuffleButton);
