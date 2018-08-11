@@ -17,7 +17,10 @@ public class StringStartEnd {
 		
 		// 整型参数指定在字符串中开始进行比较操作的起始索引
 		for ( int count = 0; count < strings.length; count++ ) //遍历数组strings
-			// 找出strings数组中每个字符串在下标2位置以"art"开始的字符串
+
+			// 整型参数指定在字符串中开始比较操作的起始索引，
+			// 找出字符串数组中的以2开始能匹配"art"的字符串并输出
+
 			if ( strings[ count ].startsWith( "art", 2 ) )
 				output += "\"" + strings[ count ] +
 					"\" starts with \"art\" at position 2\n";
@@ -32,7 +35,7 @@ public class StringStartEnd {
 			
 		}
 		
-		JOptionPane.showMessageDialog(null, output, "String Class Comparisons", JOptionPane.INFORMATION_MESSAGE );
+		JOptionPane.showMessageDialog( null, output, "String Class Comparisons", JOptionPane.INFORMATION_MESSAGE );
 		
 		System.exit(0);
 	}
