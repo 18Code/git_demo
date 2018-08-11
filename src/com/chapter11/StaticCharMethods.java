@@ -13,19 +13,19 @@ import javax.swing.JTextField;
 // 11.15
 public class StaticCharMethods extends JFrame {
 	// feifei from 8 to 23
-	private char c;
-	private JLabel promptLabel;
-	private JTextField inputField;
-	private JTextArea outputArea;
-	public StaticCharMethods(){
-		super("Static Character Methods");
+	private char c;	//声明StaticCharMethods的私有实例变量		// 字符变量c
+	private JLabel promptLabel;	//文本提示标签
+	private JTextField inputField;	//输入文本域
+	private JTextArea outputArea;	//输出文本域
+	public StaticCharMethods(){	//构造方法
+		super("Static Character Methods");	//显式地调用父类JFrame的构造方法，参数为Static Character Methods
 		
-		Container container = getContentPane();
-		container.setLayout(new FlowLayout());
+		Container container = getContentPane();	//创建内容面板对象
+		container.setLayout(new FlowLayout());	//设置布局为FlowLayout
 		
-		promptLabel = new JLabel("Enter a character and press Enter");
-		container.add(promptLabel);
-		inputField = new JTextField(5);
+		promptLabel = new JLabel("Enter a character and press Enter");	//创建JLabel对象promptLabel
+		container.add(promptLabel);	//将promptLabel添加到内容面板
+		inputField = new JTextField(5);	//创建JTextField对象inputField
 		
 		inputField.addActionListener(
 			new ActionListener() { // 创建继承ActionListener匿名内部类
