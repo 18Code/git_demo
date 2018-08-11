@@ -38,16 +38,16 @@ public class StaticCharMethods extends JFrame {
 	//在outputArea中显示字符信息
 	private void buildOutput(){
 		
-		outputArea.setText( "is defined: " + Character.isDefined(c) + 
-				"\nis digit: " + Character.isDigit(c) + 
-				"\nis first character in a Java identifier: " + Character.isJavaIdentifierStart(c) +
-				"\nis part of a Java identifier: " + Character.isJavaIdentifierPart(c) +
-				"\nis letter: " + Character.isLetter(c) + 
-				"\nis letter or digit: " + Character.isLetterOrDigit(c) +
-				"\nis lower case: " + Character.isLowerCase(c) +
-				"\nis upper case: " + Character.isUpperCase(c) +
-				"\nto upper case: " + Character.toUpperCase(c) +
-				"\nto lower case: " + Character.toLowerCase(c) );
+		outputArea.setText( "is defined: " + Character.isDefined(c) + //确定Unicode字符集中是否定义了字符c
+				"\nis digit: " + Character.isDigit(c) + 			//确认c是否是一个已定义的Unicode数字
+				"\nis first character in a Java identifier: " + Character.isJavaIdentifierStart(c) +//确定c是否能作为java标识符的第一个字符
+				"\nis part of a Java identifier: " + Character.isJavaIdentifierPart(c) +//确定c是否能作为java标识符的字符
+				"\nis letter: " + Character.isLetter(c) + //确定c是否为一个字母
+				"\nis letter or digit: " + Character.isLetterOrDigit(c) +//确定c是一个字母还是一个数字
+				"\nis lower case: " + Character.isLowerCase(c) +//确定c是否为一个小写字母
+				"\nis upper case: " + Character.isUpperCase(c) +//确定c是否为一个大写字母
+				"\nto upper case: " + Character.toUpperCase(c) +//将c转换为大写字母
+				"\nto lower case: " + Character.toLowerCase(c) );//将c转换为小写字母
 	}
 	
 	
