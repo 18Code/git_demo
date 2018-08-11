@@ -26,6 +26,16 @@ public class StringBufferAppend {
 		buffer.append(charArray, 0, 3);    //将部分数组元素附加到buffer后面，从下标0开始，长度为3
 		buffer.append(" ");
 		//29-38 feifei
+		buffer.append(booleanValue);	//将boolean类型变量的值添加到buffer末尾
+		buffer.append(" ");	//将空格添加到buffer末尾
+		buffer.append(characterValue);	//将char类型变量的值添加到buffer末尾
+		buffer.append(" ");	//将空格添加到buffer末尾
+		buffer.append(integerValue);	//将int类型变量的值添加到buffer末尾
+		buffer.append(" ");	//将空格添加到buffer末尾
+		buffer.append(longValue);	//将long类型变量的值添加到buffer末尾
+		buffer.append(" ");	//将空格添加到buffer末尾
+		buffer.append(floatValue);	//将float类型变量的值添加到buffer末尾
+		buffer.append(" ");	//将空格添加到buffer末尾
 		//39-end wu
 		
 	}
