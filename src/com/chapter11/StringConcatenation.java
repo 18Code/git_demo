@@ -12,7 +12,7 @@ public class StringConcatenation {
 		output += "\n\nResult of s1.concat( s2 ) = " + s1.concat( s2 );
 		output += "\ns1 after concatenation = " + s1;
 		
-	
+		
 		System.exit( 0 ); // terminate application
 		
 	} // end method main
