@@ -15,9 +15,9 @@ public class StringStartEnd {
 		
 		output += "\n";	//添加换行符到output
 		
-		// 从字符串下标为2开始测试startWith方法
+		// 整型参数指定在字符串中开始进行比较操作的起始索引
 		for ( int count = 0; count < strings.length; count++ ) //遍历数组strings
-			// 找出strings数组中在下标2位置以"art"开始的字符串
+			// 找出strings数组中每个字符串在下标2位置以"art"开始的字符串
 			if ( strings[ count ].startsWith( "art", 2 ) )
 				output += "\"" + strings[ count ] +
 					"\" starts with \"art\" at position 2\n";

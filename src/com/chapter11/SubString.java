@@ -8,9 +8,10 @@ public class SubString {
 		
 		String letters = "abcdefghijklmabcdefghijklm";	//声明字符串变量letters并赋值
 		
-		//测试subString方法
+		//测试subString方法---从下标为20的位置开始截取直到结束
 		String output = "Substring from index 20 to end is " 
 			+ "\"" + letters.substring( 20 ) + "\"\n";
+		//测试subString方法---从下标为3开始直到6结束
 		output += "Substring from index 3 up to 6 is "
 			+ "\"" + letters.substring( 3, 6 ) + "\"";
 		
