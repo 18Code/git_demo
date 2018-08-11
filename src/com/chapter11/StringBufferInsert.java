@@ -1,4 +1,7 @@
 package com.chapter11;
+
+import javax.swing.JOptionPane;
+
 //11.14
 public class StringBufferInsert {
 	public static void main(String[] args) {
@@ -37,6 +40,14 @@ public class StringBufferInsert {
 		
 		String output = "buffer after inserts:\n"+buffer.toString();  //将添加内容后的buffer输出
 		
+		buffer.deleteCharAt(10);	//deleteCharAt方法，用于删除StringBuffer对象的任何位置上的字符
+		buffer.delete(2, 6);	//delete方法，起始索引为2，要删除的最后一个字符的索引加1为6。删除所有从起始索引到结束索引之间的字符，但不删除结束索引所对应的字符。
+		
+		output += "\n\nbuffer after deletes:\n" + buffer.toString();
+		
+		JOptionPane.showMessageDialog(null, output, "StringBuffer insert/delete", JOptionPane.INFORMATION_MESSAGE);
+		
+		System.exit(0);
 	}
 
 }
