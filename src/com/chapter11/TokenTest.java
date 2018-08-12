@@ -1,9 +1,15 @@
 package com.chapter11;
-
+/**
+ * StringTokenizer方法，该类将字符串分解为组成它的语言符号。
+ * 语言符号之间由定界符或由诸如空格、制表符、换行符和回车符等典型的空白字符分开
+ */
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.StringTokenizer;
 
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -15,7 +21,7 @@ public class TokenTest extends JFrame {
 	public TokenTest() {
 		// TODO Auto-generated constructor stub
 		
-		
+		Container container = getContentPane();
 		//hu
 		//23~44行
 		inputField = new JTextField( 20 );
@@ -38,7 +44,14 @@ public class TokenTest extends JFrame {
 					}
 				}//结束匿名内部类
 				);//结束addActionListener调用
-		
+		//45-52--sha
+		container.add(inputField);    //将inputField添加到container上
+		outputArea = new JTextArea(10,20);     //创建JTextArea的对象，并将引用赋给outputArea
+		outputArea.setEditable(false);     //设置输出区域是不可修改的
+		container.add(new JScrollPane(outputArea));    //给输出区域添加滚动条
+		setSize(275,240);    //设置文本区域
+		setVisible(true);    //设置可见
 	}
+	
 
 }
