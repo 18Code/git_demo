@@ -67,6 +67,9 @@ public class StaticCharMethods extends JFrame {
 	
 	
 	// shasha
-		
+	public static void main(String[] args) {
+		StaticCharMethods application = new StaticCharMethods();   //声明一个本类的对象，并将该引用赋给application
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //调用父类中设置默认关闭的操作，当关闭窗口时自动退出系统
+	}	
 	
 }
