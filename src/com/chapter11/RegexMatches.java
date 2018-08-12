@@ -18,7 +18,7 @@ class RegexMatches {
 		
 		//hu
 		//24-32
-		while ( matcher.find() )
+		while ( matcher.find() )//每次调用该方法都从上一次调用结束位置开始
 			output += matcher.group() + "\n";
 		
 		JOptionPane.showMessageDialog(null, ouput);
