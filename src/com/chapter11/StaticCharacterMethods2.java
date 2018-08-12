@@ -37,8 +37,8 @@ public class StaticCharacterMethods2 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {	//实例化ActionListener类对象必须要实现的方法actionPerformed
 				// TODO Auto-generated method stub
-				digit = Integer.parseInt(input.getText());	//将input中的文本从字符串类型转换为int型，将值赋给digit
-				radix = Integer.parseInt(radixField.getText());	//将radixField中的文本从字符串类型转换为int型，将值赋给radix
+				digit = Integer.parseInt( input.getText() );	//将input中的文本从字符串类型转换为int型，将值赋给digit
+				radix = Integer.parseInt( radixField.getText() );	//将radixField中的文本从字符串类型转换为int型，将值赋给radix
 				JOptionPane.showMessageDialog(null, "Convert digit to character: " +
 						Character.forDigit(digit, radix));	//使用forDigit方法将整数digit转换为由整数radix所指定的数制中的相应字符
 			}
@@ -51,7 +51,7 @@ public class StaticCharacterMethods2 extends JFrame {
 				
 				@Override
 				public void actionPerformed( ActionEvent event ) {
-					digit = Integer.parseInt( input.getText() ); // 获取要转换的数字的string形式，转换成int型
+					digit = Integer.parseInt( input.getText() ); // 获取要转换的数字或字符的string形式，转换成int型
 					radix = Integer.parseInt( radixField.getText() ); // 获取目标进制的string形式，转换成int型
 					JOptionPane.showMessageDialog( null,	// 弹出消息框
 						"Convert digit to character: " + 
