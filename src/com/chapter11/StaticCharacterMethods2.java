@@ -2,6 +2,7 @@ package com.chapter11;
 
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,23 +14,27 @@ import javax.swing.JTextField;
 
 //11.16
 public class StaticCharacterMethods2 extends JFrame {
-	// shasha from 8 to 25
-	private char c;
-	private int digit, radix;
-	private JLabel prompt1, prompt2;
-	private JTextField radixField, input;
-	private JButton toChar, toInt;
-	
-	
+	//8-25
+	private char c;    //声明字符c
+	private int digit,radix;    //声明两个整型变量
+	private JLabel prompt1,prompt2;    //文本提示标签
+	private JTextField input,radixField;    //文本输入区域
+	private JButton toChar,toInt;     //转换为字符、转换为数字按钮	
 	public StaticCharacterMethods2() {
-		// TODO Auto-generated constructor stub
-		Container container = null;
+		super("Character Conversion Methods");   //显示调用父类JFrame中的构造方法，传入参数Character Conversion Methods
+		Container container = getContentPane();   //创建内容面板对象
+		container.setLayout(new FlowLayout());    //设置页面布局
+		
+		prompt1 = new JLabel("Enter a digit or character ");   //创建JLabel对象prompt1
+		input = new JTextField(5);     //创建JTextField对象input
+		container.add(prompt1);    //将prompt1添加到内容面板
+		container.add(input);      //将input添加到内容面板
 		
 		//26-49
 		prompt2 = new JLabel("Enter a radix ");	//创建JLabel对象prompt2
 		radixField = new JTextField(5);	//创建JTextField对象radixField
 		container.add(prompt2);	//将prompt2添加到内容面板
-		container.add(input);	//将input添加到内容面板
+		container.add(radixField);	//将radixField添加到内容面板
 		
 		toChar = new JButton("Convert digit to character");	//创建JButton对象toChar
 		toChar.addActionListener(new ActionListener() {	//为toChar绑定事件监听
