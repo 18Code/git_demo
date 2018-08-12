@@ -14,14 +14,12 @@ import javax.swing.JTextField;
 
 //11.16
 public class StaticCharacterMethods2 extends JFrame {
-
 	//8-25
 	private char c;    //声明字符c
 	private int digit,radix;    //声明两个整型变量
 	private JLabel prompt1,prompt2;    //文本提示标签
 	private JTextField input,radixField;    //文本输入区域
-	private JButton toChar,toInt;     //转换为字符、转换为数字按钮
-	
+	private JButton toChar,toInt;     //转换为字符、转换为数字按钮	
 	public StaticCharacterMethods2() {
 		super("Character Conversion Methods");   //显示调用父类JFrame中的构造方法，传入参数Character Conversion Methods
 		Container container = getContentPane();   //创建内容面板对象
@@ -44,13 +42,32 @@ public class StaticCharacterMethods2 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {	//实例化ActionListener类对象必须要实现的方法actionPerformed
 				// TODO Auto-generated method stub
-				digit = Integer.parseInt(input.getText());	//将input中的文本从字符串类型转换为int型，将值赋给digit
-				radix = Integer.parseInt(radixField.getText());	//将radixField中的文本从字符串类型转换为int型，将值赋给radix
+				digit = Integer.parseInt( input.getText() );	//将input中的文本从字符串类型转换为int型，将值赋给digit
+				radix = Integer.parseInt( radixField.getText() );	//将radixField中的文本从字符串类型转换为int型，将值赋给radix
 				JOptionPane.showMessageDialog(null, "Convert digit to character: " +
 						Character.forDigit(digit, radix));	//使用forDigit方法将整数digit转换为由整数radix所指定的数制中的相应字符
 			}
 		});	//addActionListener结束
+		
+		// 初始化JButton对象toInt
+		toInt = new	JButton( "Convert character to digit" );
+		toInt.addActionListener(	// 为toInt按钮设置监听程序
+			new ActionListener() { // anonymous  inner class
 				
+				@Override
+				public void actionPerformed( ActionEvent event ) {
+					digit = Integer.parseInt( input.getText() ); // 获取要转换的数字或字符的string形式，转换成int型
+					radix = Integer.parseInt( radixField.getText() ); // 获取基数的string形式，转换成int型
+					JOptionPane.showMessageDialog( null,	// 弹出消息框
+						"Convert digit to character: " + 
+					Character.forDigit( digit,  radix ) ); // 第一个参数要转换的十进制数，第二个参数为目标进制参数
+					
+				} // end method actionPerformed
+				
+			} // end anonymous inner class
+			
+		); // end call to addActionListenner
+		
 		//hu
 		//71行
 		container.add( toChar );

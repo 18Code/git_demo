@@ -1,4 +1,7 @@
 package com.chapter11;
+
+import javax.swing.JOptionPane;
+
 //11.17
 //Character类的非静态方法
 
@@ -19,8 +22,13 @@ public class OtherCharMethods {
 		} else {
 			output += "\n\nc1 and c2 are not equal";	//否则，将字符串"c1 and c2 are not equal"添加到output
 		}
+
 		//将output中的内容附加到对话框中
 		JOptionPane.showMessageDialog(null, output,"Non-static Character methods",JOptionPane.INFORMATION_MESSAGE);
 		System.exit(0);    //退出系统
 	}//end main
 }//end class OtherCharMethods
+
+		
+		
+
