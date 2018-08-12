@@ -14,7 +14,7 @@ public class RegexSubstitution {
 		//29-38hu
 		//将前3个数用‘digit’代替
 		for ( int i = 0; i < 3; i++ )
-			secondString = secondString.replaceFirst("\\d", "digit");
+			secondString = secondString.replaceFirst("\\d", "digit");//replaceFirst方法替换第一个与模式匹配的地方
 		
 		output += "\nFirst 3 digits replaced by \"digit\" : " + secondString;
 		output += "\nString split at commas: [";
