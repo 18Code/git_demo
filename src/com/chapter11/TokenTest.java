@@ -38,7 +38,7 @@ public class TokenTest extends JFrame {
 		Container container = getContentPane(); // 创建容器，放置GUI组件
 		container.setLayout( new FlowLayout() );// 设置布局
 		// 初始化promptLabel组件
-		promptLabel = new JLabel( "Enter a sentence and pr Enter" );
+		promptLabel = new JLabel( "Enter a sentence and press Enter" );
 		container.add( promptLabel ); // 将promptLabel添加到容器
 		//23~44行
 		inputField = new JTextField( 20 );
@@ -53,19 +53,14 @@ public class TokenTest extends JFrame {
 					StringTokenizer tokens = 
 						new StringTokenizer(event.getActionCommand());
 					
-					outputArea.setText("Number of elements: " + tokens.countTokens() + "\nThe tokens are:\n ");
+					outputArea.setText("Number of elements: " + tokens.countTokens() + "\nThe tokens are:\n");
 					
 					while ( tokens.hasMoreTokens() )
 						outputArea.append(tokens.nextToken() + "\n" );
 						
-			outputArea.setText("Number of elements: " + tokens.countTokens() + "\nThe tokens are:\n ");
-						
-						while ( tokens.hasMoreTokens() )
-							outputArea.append(tokens.nextToken() + "\n" );
-						
-					}
-				}//结束匿名内部类
-				);//结束addActionListener调用
+				}
+			}//结束匿名内部类
+		);//结束addActionListener调用
 		//45-52--sha
 		container.add(inputField);    //将inputField添加到container上
 		outputArea = new JTextArea(10,20);     //创建JTextArea的对象，并将引用赋给outputArea
@@ -74,11 +69,11 @@ public class TokenTest extends JFrame {
 		setSize(275,240);    //设置文本区域
 		setVisible(true);    //设置可见
 
-		
-		
-		
-
 	}
-	// feifei
+		// feifei
+		public static void main(String args[]) {	//程序的入口
+			TokenTest application = new TokenTest();	//创建TokenTest对象
+			application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//指定用户单击窗口的关闭按钮时应终止程序
+		}
 
 }
