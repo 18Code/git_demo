@@ -1,5 +1,5 @@
 package com.chapter15;
-//11.15
+//15.3
 //演示try-catch-finally异常处理机制
 
 public class UsingExceptions {
