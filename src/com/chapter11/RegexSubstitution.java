@@ -18,6 +18,17 @@ public class RegexSubstitution {
 		output += "\n^ substituted for *: " + firstString;	//将替换后的firstString添加到output
 		
 		//19-28wu
+		// 代替 'stars' 用 'carets'
+		firstString = firstString.replaceAll( "stars", "carets" );
+		
+		output += "\n\"carets\" substituted for \"stars\": " + firstString;
+		
+		// firstString中的所有单词用“word”代替
+		output += "\nEvery word replaced by \"word\": " + 
+			firstString.replaceAll( "\\w+", "word" );
+		
+		// 将原secondString连接到output中
+		output += "\n\nOrginal String 2: " + secondString;
 		//29-38hu
 		//将前3个数用‘digit’代替
 		for ( int i = 0; i < 3; i++ )

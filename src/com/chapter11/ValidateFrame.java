@@ -57,7 +57,7 @@ public class ValidateFrame extends JFrame {
 		firstTextField = new JTextField( 20 );
 		lastTextField = new JTextField( 20 );
 		
-		//shash 44-87
+		//shasha 44-87
 		JPanel firstName = new JPanel();   //声明面板容器JPanel的对象，并将相应组件附加到对应的面板容器对象中
 		firstName.add(firstLabel);
 		firstName.add(firstTextField);
