@@ -8,8 +8,15 @@ public class RegexSubstitution {
 
 	public static void main(String[] args) {
 		//9-18feifei
-		String secondString = "";
-		String output = "";
+		String firstString = "This sentence ends in 5 stars *****";	//声明字符串变量firstString并赋值
+		String secondString = "1, 2, 3, 4, 5, 6, 7, 8";	//声明字符串变量secondString并赋值
+		
+		String output = "Orginal String 1: " + firstString;	//声明字符串变量output，将firstString添加到output
+		
+		firstString = firstString.replaceAll("\\*", "^");	//replaceAll方法，将firstString中所有的“*”都替换为“^”
+		
+		output += "\n^ substituted for *: " + firstString;	//将替换后的firstString添加到output
+		
 		//19-28wu
 		//29-38hu
 		//将前3个数用‘digit’代替
