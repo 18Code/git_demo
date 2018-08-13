@@ -18,11 +18,11 @@ public class DeckOfCards extends JFrame {
 
 	public DeckOfCards() {	//创建一副牌并创建GUI组件
 		// TODO Auto-generated constructor stub
-		super("Card Dealing Program");
+		super("Card Dealing Program");	//调用超类构造函数，设置标题栏内容
 		
 		String faces[] = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
-				"Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
-		String suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+				"Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};	//创建face数组，从字符串“Ace”到“King”
+		String suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};	//创建Suits数组，"Hearts", "Diamonds", "Clubs", "Spades"
 		
 		deck = new Card[52];	//用Card对象来创建一副52张纸牌
 		currentCard = -1;	//代表deck数组中最近一次所发的牌（如果还未发牌，则该值等于-1）
