@@ -10,20 +10,29 @@ import javax.swing.*;
 //模拟洗牌和发牌
 
 public class DeckOfCards extends JFrame {
-	private Card deck[];
-	private int currentCard;
-	private JButton shuffleButton,dealButton;
-	private JTextField displayField;
-	private JLabel statusLabel;
+	private Card deck[];	//声明Card变量，用于存储纸牌
+	private int currentCard;	//声明currentCard
+	private JButton shuffleButton,dealButton;	//声明JButton变量shuffleButton和dealButton，用于洗牌和发牌的按钮
+	private JTextField displayField;	//声明JTextField变量displayField，用于显示Card引用
+	private JLabel statusLabel;	//声明JLabel变量statusLabel，用于显示牌的点数
 
-	public DeckOfCards() {
+	public DeckOfCards() {	//创建一副牌并创建GUI组件
 		// TODO Auto-generated constructor stub
-		Container container = getContentPane();
-
+		super("Card Dealing Program");
 		
+		String faces[] = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
+				"Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+		String suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
 		
+		deck = new Card[52];	//用Card对象来创建一副52张纸牌
+		currentCard = -1;	//代表deck数组中最近一次所发的牌（如果还未发牌，则该值等于-1）
 		
+		for (int count = 0; count < deck.length; count++) {	//for循环
+			deck[count] = new Card(faces[count % 13], suits[count / 13]);	//为deck数组填充Card对象，实例化每个Card对象
+		}
 		
+		Container container = getContentPane();	//创建内容面板
+		container.setLayout(new FlowLayout());	//设置布局
 		
 		// 初始化dealButton组件
 		dealButton = new JButton( "Deal card" );
@@ -67,7 +76,6 @@ public class DeckOfCards extends JFrame {
 					displayField.setText( "DECK IS SHUFFLED" );
 				}
 			});
-		container.add( shuffleButton );
 		
 		//hu
 		//78~105
