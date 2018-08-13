@@ -116,7 +116,7 @@ public class ValidateFrame extends JFrame {
 			
 			JOptionPane.showMessageDialog(this, "Please fill all fields");	//通知用户在程序验证输入之前，必须填写所有的文本字段
 		
-		//若不存在空的文本字段，则验证用户输入
+		//若不存在空的文本字段，则验证用户输入。使用matches方法检测整个字符串是否符合正则表达式
 		} else if(!firstTextField.getText().matches("[A-Z][a-zA-Z]*")){	//验证名字
 			JOptionPane.showMessageDialog(this, "Invalid first name");	//若显示信息无效，通知用户
 		
