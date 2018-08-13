@@ -100,37 +100,46 @@ public class ValidateFrame extends JFrame {
 		 
 	}
 	
-	public static void main(String args[]) {
-		ValidateFrame application = new ValidateFrame();
-		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);;
+	public static void main(String args[]) {	//程序的入口
+		ValidateFrame application = new ValidateFrame();	//创建ValidateFrame对象，调用默认构造方法
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);;	//指定用户单击窗口的关闭按钮时应终止程序
 	}
 	
-	private void validateDate(){
+	private void validateDate(){	//validateDate方法，处理OK按钮单击事件
 		if (lastTextField.getText().equals("") || 
 			firstTextField.getText().equals("") ||
 			addressTextField.getText().equals("") ||
 			cityTextField.getText().equals("") ||
 			stateTextField.getText().equals("") ||
 			zipTextField.getText().equals("") ||
-			phoneTextField.getText().equals("")){ 
+			phoneTextField.getText().equals("")){ 	//if-else语句，确定不存在空的文本字段
 			
-			JOptionPane.showMessageDialog(this, "Please fill all fields");
-		} else if(!firstTextField.getText().matches("[A-Z][a-zA-Z]*")){
-			JOptionPane.showMessageDialog(this, "Invalid first name");
-		} else if(!lastTextField.getText().matches("[A-Z][a-zA-Z]*")){
+			JOptionPane.showMessageDialog(this, "Please fill all fields");	//通知用户在程序验证输入之前，必须填写所有的文本字段
+		
+		//若不存在空的文本字段，则验证用户输入
+		} else if(!firstTextField.getText().matches("[A-Z][a-zA-Z]*")){	//验证名字
+			JOptionPane.showMessageDialog(this, "Invalid first name");	//若显示信息无效，通知用户
+		
+		} else if(!lastTextField.getText().matches("[A-Z][a-zA-Z]*")){	//验证姓氏
 			JOptionPane.showMessageDialog(this, "Invalid last name");
-		} else if(!addressTextField.getText().matches("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){
+		
+		} else if(!addressTextField.getText().matches("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){	//验证地址
 			JOptionPane.showMessageDialog(this, "Invalid address");
-		} else if(!cityTextField.getText().matches("([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){
+		
+		} else if(!cityTextField.getText().matches("([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){	//验证城市
 			JOptionPane.showMessageDialog(this, "Invalid city");
-		} else if(!stateTextField.getText().matches("([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){
+		
+		} else if(!stateTextField.getText().matches("([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){	//验证区域
 			JOptionPane.showMessageDialog(this, "Invalid state");
-		} else if(!zipTextField.getText().matches("\\d{5}")){
+		
+		} else if(!zipTextField.getText().matches("\\d{5}")){	//验证邮政编码
 			JOptionPane.showMessageDialog(this, "Invalid zip code");
-		} else if(!phoneTextField.getText().matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}")){
+		
+		} else if(!phoneTextField.getText().matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}")){	//验证电话号码
 			JOptionPane.showMessageDialog(this, "Invalid phone number");
-		} else {
-			JOptionPane.showMessageDialog(this, "Thank you");
+		
+		} else {	//信息有有效
+			JOptionPane.showMessageDialog(this, "Thank you");	//通知用户，输出Thank you
 		}
 	}
 

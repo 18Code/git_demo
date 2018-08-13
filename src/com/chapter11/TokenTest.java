@@ -72,7 +72,7 @@ public class TokenTest extends JFrame {
 	}
 		// feifei
 		public static void main(String args[]) {	//程序的入口
-			TokenTest application = new TokenTest();	//创建TokenTest对象
+			TokenTest application = new TokenTest();	//创建TokenTest对象，调用默认构造方法
 			application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//指定用户单击窗口的关闭按钮时应终止程序
 		}
 
