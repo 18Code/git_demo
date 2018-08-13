@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -99,9 +100,38 @@ public class ValidateFrame extends JFrame {
 		 
 	}
 	
+	public static void main(String args[]) {
+		ValidateFrame application = new ValidateFrame();
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);;
+	}
 	
 	private void validateDate(){
-		
+		if (lastTextField.getText().equals("") || 
+			firstTextField.getText().equals("") ||
+			addressTextField.getText().equals("") ||
+			cityTextField.getText().equals("") ||
+			stateTextField.getText().equals("") ||
+			zipTextField.getText().equals("") ||
+			phoneTextField.getText().equals("")){ 
+			
+			JOptionPane.showMessageDialog(this, "Please fill all fields");
+		} else if(!firstTextField.getText().matches("[A-Z][a-zA-Z]*")){
+			JOptionPane.showMessageDialog(this, "Invalid first name");
+		} else if(!lastTextField.getText().matches("[A-Z][a-zA-Z]*")){
+			JOptionPane.showMessageDialog(this, "Invalid last name");
+		} else if(!addressTextField.getText().matches("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){
+			JOptionPane.showMessageDialog(this, "Invalid address");
+		} else if(!cityTextField.getText().matches("([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){
+			JOptionPane.showMessageDialog(this, "Invalid city");
+		} else if(!stateTextField.getText().matches("([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")){
+			JOptionPane.showMessageDialog(this, "Invalid state");
+		} else if(!zipTextField.getText().matches("\\d{5}")){
+			JOptionPane.showMessageDialog(this, "Invalid zip code");
+		} else if(!phoneTextField.getText().matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}")){
+			JOptionPane.showMessageDialog(this, "Invalid phone number");
+		} else {
+			JOptionPane.showMessageDialog(this, "Thank you");
+		}
 	}
 
 }
