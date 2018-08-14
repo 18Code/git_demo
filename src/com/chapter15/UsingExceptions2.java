@@ -34,8 +34,10 @@ public class UsingExceptions2 {
 		method2();//调用method2方法
 	}
 
-	public UsingExceptions2() {
-		// TODO Auto-generated constructor stub
+	// method3：将异常抛回method2
+	public static void method3() throws Exception{
+		
+		throw new Exception( "Exception thrown in method3" );
 	}
 
-}
+} // end class UsingException2
