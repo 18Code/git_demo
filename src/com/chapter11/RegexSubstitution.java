@@ -40,7 +40,7 @@ public class RegexSubstitution {
 		//39-47shasha
 		String[] results = secondString.split(",\\s*");   //调用split方法分割一个由逗号分开的整数字符串，将分割结果保存在数组中
 		for(int i = 0;i<results.length;i++){  //遍历数组，输出分割的结果
-			output +="\""+results[i] +"\",";
+			output +="\""+results[i] +"\", ";
 		}
 		output =output.substring(0,output.length()-2)+"]";   //截取字符串output
 		
