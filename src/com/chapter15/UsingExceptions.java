@@ -4,6 +4,7 @@ package com.chapter15;
 
 public class UsingExceptions {
 	
+	
 	public static void throwException() throws Exception{
 		
 		try{
