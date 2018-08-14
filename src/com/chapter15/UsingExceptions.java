@@ -27,13 +27,10 @@ public class UsingExceptions {
 			System.err.println( exception );
 			
 		}
-	}
-	
-	
-		
-
-	public UsingExceptions() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
+		//63-70  ---shasha
+		finally{   //无论有没有抛出异常都执行finally中的语句
+			System.err.println("Finally executed in doesNotThrowException");
+		}
+		System.out.println("End of method doesNotThrowsException");
+	}//End of method doesNotThrowsException
+}//end class 

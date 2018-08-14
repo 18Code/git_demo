@@ -41,7 +41,7 @@ public class DivideByZreoTest extends JFrame implements ActionListener {
 		inputField2.addActionListener(this);
 		
 		//设置输出提示标签和输出框
-		container.add(new JLabel("RESULT",SwingConstants.RIGHT));
+		container.add(new JLabel("RESULT",SwingConstants.RIGHT));    //右对齐
 		outputField = new JTextField();
 		container.add(outputField);
 		
