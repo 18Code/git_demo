@@ -27,9 +27,8 @@ public class UsingChainedExceptions {
 			}
 		}
 	
-
-	public UsingChainedExceptions() {
-		// TODO Auto-generated constructor stub
+	public static void method3() throws Exception {	//method3方法
+		throw new Exception("Exception thrown in method3");	//抛出新的异常"Exception thrown in method3"
 	}
 
 }
