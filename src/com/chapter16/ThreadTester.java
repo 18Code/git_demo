@@ -1,17 +1,30 @@
 package com.chapter16;
 //16.3
 //不同的时间间隔的多线程输出
-public class ThreadTester {
+public class ThreadTester {	//public类ThreadTester
 
-	public ThreadTester() {
-		// TODO Auto-generated constructor stub
+	public static void main(String[] args) {
+		
+		PrintThread thread1 = new PrintThread("thread1");
+		PrintThread thread2 = new PrintThread("thread2");
+		PrintThread thread3 = new PrintThread("thread3");
+		
+		System.err.println("Starting threads");
+		
+		thread1.start();
+		thread2.start();
+		thread3.start();
+		
+		System.err.println("Threads started, main ends\n");
+		
 	}
 	
-	
-	class PrintThread extends Thread{
+}
+
+	class PrintThread extends Thread{	//声明PrintThread类继承自Thread类
+		private int sleepTime;	//声明私有变量sleepTime
 		
-		
-		public PrintThread(String name){
+		public PrintThread(String name){	//PrintThread方法
 			
 			
 			// 34-47hu
@@ -26,14 +39,11 @@ public class ThreadTester {
 				System.err.println(getName() + " going to sleep for " + sleepTime);
 				
 				Thread.sleep(sleepTime);
+			} catch(InterruptedException exception) {
+				
 			}
-			
 			
 		}
 		
-		
 	}
-	
-	
 
-}
