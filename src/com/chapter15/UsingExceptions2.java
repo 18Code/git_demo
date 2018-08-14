@@ -25,13 +25,18 @@ public class UsingExceptions2 {
 				System.out.println(currentElement.getClassName()+"\t");
 				System.out.println(currentElement.getFileName()+"\t");
 				System.out.println(currentElement.getLineNumber()+"\t");
-				System.out.println(currentElement.getMethodName()+"\t");
+				System.out.println(currentElement.getMethodName()+"\n");
 			}//end for
 		}//end catch
 	}//end method main
 	
-	public static void method1(){//声明method1方法
+	public static void method1() throws Exception{//声明method1方法
 		method2();//调用method2方法
+	}
+
+	private static void method2() throws Exception {	//method2方法
+		// TODO Auto-generated method stub
+		method3();	//调用method3方法
 	}
 
 	// method3：将异常抛回method2
