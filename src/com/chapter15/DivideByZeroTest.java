@@ -54,7 +54,6 @@ public class DivideByZeroTest extends JFrame implements ActionListener {
 	
 	// quotient方法：带两个int型参数，前面表示分子，后面表示分母，
 	// 方法返回一个整型的分子与分母的比值，
-	// 若传入参数不是整型，会抛出NumberfFormatException异常
 	public int quotient( int numerator, int denominator ){
 		return numerator / denominator;
 	} // end method quotient
