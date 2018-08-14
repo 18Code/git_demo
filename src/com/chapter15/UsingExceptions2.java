@@ -36,6 +36,7 @@ public class UsingExceptions2 {
 
 	// method3：将异常抛回method2
 	public static void method3() throws Exception{
+		
 		throw new Exception( "Exception thrown in method3" );
 	}
 
