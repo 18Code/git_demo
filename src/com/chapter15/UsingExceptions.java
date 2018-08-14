@@ -4,6 +4,17 @@ package com.chapter15;
 
 public class UsingExceptions {
 	
+	public static void main(String args[]) {	//程序的入口
+		try {	//try块
+			throwException();	//调用throwException方法
+			
+		} catch (Exception exception) {	//main方法中的try块检测到这个重新抛出的异常，由catch子句处理它
+			// TODO: handle exception
+			System.err.println("Exception handled in main");	//输出错误反馈信息
+		}
+		
+		doesNotThrowException();	//调用doesNotThrowException方法
+	}	//main方法结束
 	
 	public static void throwException() throws Exception{
 		

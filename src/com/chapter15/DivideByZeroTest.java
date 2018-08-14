@@ -48,12 +48,33 @@ public class DivideByZeroTest extends JFrame implements ActionListener {
 		setSize(425,100);  //设置窗体大小
 		setVisible(true);  //设置可见
 	}//end DivideByZero Constructor
-	public void actionPerformed(ActionEvent event){
+	
+	public void actionPerformed(ActionEvent event){	//actionPerformed方法
+		outputField.setText("");	//将outputField文本字段置为空
+
+		try {	//try块
+			number1 = Integer.parseInt(inputField1.getText());	//读取两个JTextField中的整数，将值分别赋给number1和number2
+			number2 = Integer.parseInt(inputField2.getText());
+			
+			result = quotient(number1, number2);	//将number1和number2传递给quotient方法，计算这两个整数的商，并返回一个int型结果，将结果赋给result
+			outputField.setText(String.valueOf(result));
+			
+		} catch(NumberFormatException numberFormatException) {	//若Integer类的parseInt方法所接收的字符不代表一个有效的整数，则该方法将抛出NumberFormatException异常，并且程序将捕获该异常
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(this, "You must enter two integers",
+					"Invalid Number Format", JOptionPane.ERROR_MESSAGE);	//显示错误消息对话框
+			
+		} catch (ArithmeticException arithmeticException) {	//Java的整数算法不允许被0除。如果用户在第2个JTextField中输入0，，Java将抛出ArithmeticException异常，并且程序将捕获该异常
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(this, arithmeticException.toString(),
+					"Arithmetic Exception", JOptionPane.ERROR_MESSAGE);	//显示错误消息对话框
+		}	//try-catch块结束
 		
-	}
+	}	//actionPerformed方法结束
+	
 	// quotient方法：带两个int型参数，前面表示分子，后面表示分母，
 		// 方法返回一个整型的分子与分母的比值，
-		public int quotient( int numerator, int denominator ){
+		public int quotient( int numerator, int denominator ) throws ArithmeticException {
 			return numerator / denominator;
 		} // end method quotient
 		 
