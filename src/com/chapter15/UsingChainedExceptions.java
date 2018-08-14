@@ -17,6 +17,14 @@ public class UsingChainedExceptions {
 				throw new Exception("Exception thrown in method1", exception);
 				
 			}
+		}//end method1
+		//31-41-----shasha
+		public static void method2() throws Exception{
+			try{
+				method3();  //调用method3
+			}catch(Exception exception){
+				throw new Exception("Exception thrown in method2",exception);
+			}
 		}
 	
 
