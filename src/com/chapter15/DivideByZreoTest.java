@@ -2,6 +2,7 @@ package com.chapter15;
 
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
@@ -32,7 +33,22 @@ public class DivideByZreoTest extends JFrame implements ActionListener {
 		inputField1 = new JTextField();
 		container.add(inputField1);
 		
+		//29-43---shasha
+		//设置第二个输入标签和输入框
+		container.add(new JLabel("Enter denominator and press Enter",SwingConstants.RIGHT));
+		inputField2 = new JTextField();
+		container.add(inputField2);
+		inputField2.addActionListener(this);
 		
+		//设置输出提示标签和输出框
+		container.add(new JLabel("RESULT",SwingConstants.RIGHT));
+		outputField = new JTextField();
+		container.add(outputField);
+		
+		setSize(425,100);  //设置窗体大小
+		setVisible(true);  //设置可见
+	}//end DivideByZero Constructor
+	public void actionPerformed(ActionEvent event){
 		
 	}
 
