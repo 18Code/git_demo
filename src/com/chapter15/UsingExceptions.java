@@ -4,8 +4,18 @@ package com.chapter15;
 
 public class UsingExceptions {
 	
+	
 	public static void throwException() throws Exception{
 		
+		try{
+			System.out.println( "Method throwException" );
+			throw new Exception(); // 抛出异常
+		}
+		catch( Exception exception ){ // 捕异常try语句块中抛出的
+			System.err.println( 
+				"Exception handle in method throwException" );
+			throw exception; // 再抛出异常
+		}
 		
 		//hu
 		//40-60
