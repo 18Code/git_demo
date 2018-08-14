@@ -41,7 +41,7 @@ public class DivideByZeroTest extends JFrame implements ActionListener {
 		inputField2.addActionListener(this);
 		
 		//设置输出提示标签和输出框
-		container.add(new JLabel("RESULT",SwingConstants.RIGHT));
+		container.add(new JLabel("RESULT",SwingConstants.RIGHT));    //右对齐
 		outputField = new JTextField();
 		container.add(outputField);
 		
@@ -51,19 +51,19 @@ public class DivideByZeroTest extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event){
 		
 	}
-	
 	// quotient方法：带两个int型参数，前面表示分子，后面表示分母，
-	// 方法返回一个整型的分子与分母的比值，
-	public int quotient( int numerator, int denominator ){
-		return numerator / denominator;
-	} // end method quotient
-	 
-	// 程序入口main方法
-	public static void main( String args[] ){
-		// 创建窗体类，new关键字调用构造方法，初始图形界面
-		DivideByZeroTest application = new DivideByZeroTest();
-		
-		// 设置窗口监听，当鼠标点击关闭时，终止程序
-		application.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-	} // end method main
-} // end class DivideByZeroTest
+		// 方法返回一个整型的分子与分母的比值，
+		public int quotient( int numerator, int denominator ){
+			return numerator / denominator;
+		} // end method quotient
+		 
+		// 程序入口main方法
+		public static void main( String args[] ){
+			// 创建窗体类，new关键字调用构造方法，初始图形界面
+			DivideByZeroTest application = new DivideByZeroTest();
+			
+			// 设置窗口监听，当鼠标点击关闭时，终止程序
+			application.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+		} // end method main
+	} // end class DivideByZeroTest
+
