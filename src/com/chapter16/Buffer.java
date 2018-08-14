@@ -1,5 +1,5 @@
 package com.chapter16;
-// 16.5
+// 16.4
 // 生产者、消费者例子使用的Buffer接口
 
 public interface Buffer {
