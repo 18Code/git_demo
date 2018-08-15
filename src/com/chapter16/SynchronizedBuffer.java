@@ -2,11 +2,13 @@ package com.chapter16;
 //16.9
 //加了线程同步之后的，线程以同步的方式访问一个共享缓冲区
 public class SynchronizedBuffer implements Buffer{
-
-	private int buffer;
-	private int occupiedBufferCount;
+	private int buffer = -1; 
+	private int occupiedBufferCount = 0; // 占用buffer线程计数
+	
+	// 加了关键字synchronized的set方法
 	public synchronized void set(){
-		
+		//获取当前线程的名称
+		String name = Thread.currentThread().getName();
 		
 		
 		
