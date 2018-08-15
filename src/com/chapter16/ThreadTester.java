@@ -21,29 +21,28 @@ public class ThreadTester {	//public类ThreadTester
 	
 }	//ThreadTester类结束
 
-	class PrintThread extends Thread{	//声明PrintThread类继承自Thread类
-		private int sleepTime;	//声明私有变量sleepTime
+class PrintThread extends Thread{	//声明PrintThread类继承自Thread类
+	private int sleepTime;	//声明私有变量sleepTime
 		
-		public PrintThread(String name){	//PrintThread方法
-			
-			
-			// 34-47hu
-			//获取一个0-5秒间的随机休眠时间
-			sleepTime = (int)(Math.random() * 5001);
-		}
-		
-		//run方法是新线程要执行的代码
-		public void run() {
-			// 将线程置于休眠状态
-			try {
-				System.err.println(getName() + " going to sleep for " + sleepTime);
-				
-				Thread.sleep(sleepTime);
-			} catch(InterruptedException exception) {
-				
-			}
-			
-		}
-		
+	
+	public PrintThread( String name ){	//PrintThread方法
+		super( name );	// 调用超类构造函数，给线程取名
+		// 34-47hu
+		//获取一个0-5秒间的随机休眠时间
+		sleepTime = (int)(Math.random() * 5001);
 	}
+		
+	//run方法是新线程要执行的代码
+	public void run() {
+		// 将线程置于休眠状态
+		try {
+			System.err.println( getName() + " going to sleep for " + sleepTime );
+				
+			Thread.sleep( sleepTime );
+		} catch(InterruptedException exception) {
+
+		}
+
+	}
+}
 
