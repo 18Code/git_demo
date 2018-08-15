@@ -14,5 +14,13 @@ public class Producer extends Thread {
 		super("Producer");
 		sharedLocation = shared;
 	}
+	
+	public void run(){
+		
+		
+		
+		System.err.println( getName() + " done producing." +
+			"\nTerminating " + getName() + "." );
+	} // end method main
 
-}
+} // end class Producer
