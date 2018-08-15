@@ -40,7 +40,7 @@ class PrintThread extends Thread{	//声明PrintThread类继承自Thread类
 				
 			Thread.sleep( sleepTime );
 		} catch(InterruptedException exception) {
-
+			
 		}
 
 	}
