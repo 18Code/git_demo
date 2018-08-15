@@ -32,17 +32,17 @@ class PrintThread extends Thread{	//声明PrintThread类继承自Thread类
 		sleepTime = (int)(Math.random() * 5001);
 	}
 		
-	//run方法是新线程要执行的代码
+	//run方法是新线程要执行的代码,线程进入就绪状态后执行run方法，run方法中调用sleep方法
 	public void run() {
 		// 将线程置于休眠状态
 		try {
 			System.err.println( getName() + " going to sleep for " + sleepTime );
 				
-			Thread.sleep( sleepTime );
+			Thread.sleep( sleepTime );//调用sleep方法，线程进入休眠，休眠时间为一个0-5秒之间的随机数
 		} catch(InterruptedException exception) {
-			
+			exception.printStackTrace();
 		}
-
-	}
-}
+		System.err.println(getName()+" done sleeping");
+	}//end run
+}//end class PrintThread
 
