@@ -6,9 +6,8 @@ package com.chapter16;
 
 public class Producer extends Thread {
 	//6-14hu
-	private Buffer sharedLocation;
+	private Buffer sharedLocation;// 共享对象的引用
 	
-
 	// 构造方法
 	public Producer(Buffer shared) {
 		// TODO Auto-generated constructor stub
