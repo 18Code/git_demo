@@ -4,6 +4,12 @@ package com.chapter16;
 public class SharedBufferTest {
 	public static void main(String[] args) {
 		Buffer sharedLocation = new UnsynchronizedBuffer();//实例化一个共享的UnsynchronizedBuffer对象，并将其赋给Buffer引用sharedLocation
+		
+		Producer producer = new Producer(sharedLocation);
+		Consumer consumer = new Consumer(sharedLocation);
+		
+		producer.start();
+		consumer.start();
 	}
 
 }
