@@ -18,6 +18,10 @@ public class SharedBufferTest2 {
 		sharedLocation.displayState("Initial State");   
 		
 		Producer producer = new Producer(sharedLocation);  //创建生产者的对象，并将引用赋给producer
+		Consumer consumer = new Consumer(sharedLocation);	//创建消费者对象，并将引用赋给consumer
+		
+		producer.start();	//对Producer线程和Consumer线程调用start方法，使它们进入就绪状态
+		consumer.start();
 	}
 
 }
