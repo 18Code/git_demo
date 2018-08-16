@@ -24,7 +24,7 @@ public class Consumer extends Thread{
 		}//end for
 		
 		System.err.println(getName() + " read values totaling: " + sum +
-				".\nTerminating " + getName() + ".");
+				".\nTerminating " + getName() + ".");	//打印缓冲区的数据总数sum和该类的类名
 		
 	}//end method run
 
