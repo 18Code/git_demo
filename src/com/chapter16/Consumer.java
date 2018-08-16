@@ -1,7 +1,5 @@
 package com.chapter16;
 
-import com.charpter16.Buffer;
-
 //16.6
 //Consumer类代表生产者/消费者关系中的消费者线程
 public class Consumer extends Thread{
@@ -24,6 +22,10 @@ public class Consumer extends Thread{
 				exception.printStackTrace();
 			}
 		}//end for
+		
+		System.err.println(getName() + " read values totaling: " + sum +
+				".\nTerminating " + getName() + ".");
+		
 	}//end method run
 
 }
