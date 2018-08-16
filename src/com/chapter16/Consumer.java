@@ -16,7 +16,7 @@ public class Consumer extends Thread{
 		int sum = 0;   //声明和变量
 		for(int count = 1;count<=4;count++){
 			try{
-				Thread.sleep((int)(Math.random()*3001));  //线程随机休眠1-3秒
+				Thread.sleep((int)(Math.random()*3001));  //线程随机休眠0-3秒
 				sum +=sharedLocation.get();  //获取缓冲区中的数据，并把它们相加
 			}catch(InterruptedException exception){
 				exception.printStackTrace();
@@ -24,7 +24,7 @@ public class Consumer extends Thread{
 		}//end for
 		
 		System.err.println(getName() + " read values totaling: " + sum +
-				".\nTerminating " + getName() + ".");	//打印缓冲区的数据总数sum和该类的类名
+				".\nTerminating " + getName() + ".");	//打印已消费的值的总数sum 和该类的类名
 		
 	}//end method run
 

@@ -18,7 +18,7 @@ public class Producer extends Thread {
 	public void run(){   //声明run方法，将数字1-4存放到缓冲区
 		for(int count =1;count<=4;count++){
 			try{
-				Thread.sleep((int) (Math.random()*3001));  //调用sleep方法，随机休眠1-3秒
+				Thread.sleep((int) (Math.random()*3001));  //调用sleep方法，随机休眠0-3秒
 				sharedLocation.set(count);  //将数字1-4存放到缓冲区
 			}catch(InterruptedException exception){
 				exception.printStackTrace();
