@@ -28,27 +28,28 @@ public class SynchronizedBuffer implements Buffer{
 				System.err.println(name + " tries to read");  //输出该线程尝试读数据
 				displayState(" Buffer empty."+ name +" waits.");
 				wait();  //调用wait方法，线程进入等待状态
-			}catch(InterruptedException exception){
-				exception.printStackTrace();
+				
+			}catch(InterruptedException exception){	//捕获InterruptedException异常
+				exception.printStackTrace();	//打印栈信息
 			}
 		}
 		
-		--occupiedBufferCount;
+		--occupiedBufferCount;	//递减occupiedBufferCount，以指出该缓冲区现在是空的，即消费者不能读取该值，而生产者却能将另一个值写入buffer
 		
-		displayState(name + " reads " + buffer);
+		displayState(name + " reads " + buffer);	//调用displayState方法
 		
-		notify();
+		notify();	//调用notify方法。如果存在多个线程等待SynchronizedBuffer对象的的锁，则其中一个等待线程进入就绪状态
 		
-		return buffer;
+		return buffer;	//将buffer的值返回给它的调用者
 	}
 	
-	private void displayState(String operation) {
+	private void displayState(String operation) {	//displayState方法
 		// TODO Auto-generated method stub
-		StringBuffer outputLine = new StringBuffer(operation);
-		outputLine.setLength(40);
-		outputLine.append(buffer + "\t\t" + occupiedBufferCount);
-		System.err.println(outputLine);
-		System.err.println();
+		StringBuffer outputLine = new StringBuffer(operation);	//创建StringBuffer对象outputLine，将其初始化为字符串operation
+		outputLine.setLength(40);	//设置outputLine长度
+		outputLine.append(buffer + "\t\t" + occupiedBufferCount);	//将消费者所读取的值buffer和当前线程数occupiedBufferCount添加到outputLine
+		System.err.println(outputLine);	//在控制台窗口输出一行文本，指出消费者所读取的值
+		System.err.println();	//输出空行
 	}
 	
 }
