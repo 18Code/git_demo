@@ -43,7 +43,7 @@ public class SynchronizedBuffer implements Buffer{
 		return buffer;	//将buffer的值返回给它的调用者
 	}
 	
-	private void displayState(String operation) {	//displayState方法
+	public void displayState(String operation) {	//displayState方法
 		// TODO Auto-generated method stub
 		StringBuffer outputLine = new StringBuffer(operation);	//创建StringBuffer对象outputLine，将其初始化为字符串operation
 		outputLine.setLength(40);	//设置outputLine长度

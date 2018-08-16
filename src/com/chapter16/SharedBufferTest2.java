@@ -1,7 +1,5 @@
 package com.chapter16;
 
-import com.charpter16.SynchronizedBuffer;
-
 //16.10
 //测试加了线程同步的生产者/消费者模型
 public class SharedBufferTest2 {
@@ -17,7 +15,7 @@ public class SharedBufferTest2 {
 		
 		
 		System.err.println();   //打印空行
-		sharedLocation.diaplayState("Initial State");   
+		sharedLocation.displayState("Initial State");   
 		
 		Producer producer = new Producer(sharedLocation);  //创建生产者的对象，并将引用赋给producer
 	}
