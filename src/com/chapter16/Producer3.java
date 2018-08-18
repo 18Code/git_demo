@@ -15,22 +15,22 @@ public class Producer3 extends Thread{
 		outputArea = output;
 	}
 	
-	public void run() {
-		for (int count = 11; count <= 20; count++) {
+	public void run() {	//run方法
+		for (int count = 11; count <= 20; count++) {	//for循环
 			
 			try {
-				Thread.sleep((int)(Math.random() * 3000));
-				sharedLocation.set(count);
+				Thread.sleep((int)(Math.random() * 3000));	//休眠1到3秒
+				sharedLocation.set(count);	//产生从11到20的值
 				
-			} catch (InterruptedException e) {
+			} catch (InterruptedException e) {	//捕获InterruptedException
 				// TODO: handle exception
-				e.printStackTrace();
+				e.printStackTrace();	//打印栈信息
 			}
 		}
 		
-		String name = getName();
+		String name = getName();	//获得当前线程名
 		SwingUtilities.invokeLater(new RunnableOutput(outputArea, "\n" +
-				name + " done producing.\n" + name + " terminated.\n"));
+				name + " done producing.\n" + name + " terminated.\n"));	//RunnableOutput传给SwingUtilities类的invokeLater，以更新事件调度线程中GUI。在GUI中输出一个消息，指出该线程已完成值的产生工作，并即将终止。
 	}
 
 }
