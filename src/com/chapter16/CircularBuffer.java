@@ -1,7 +1,5 @@
 package com.chapter16;
 
-import java.awt.image.BufferStrategy;
-
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
@@ -43,7 +41,7 @@ public class CircularBuffer implements Buffer{
 	//48-91---wu
 	//92-115---shasha 
 	public synchronized int get(){
-		
+		String name = null;
 		
 		
 		
@@ -57,5 +55,10 @@ public class CircularBuffer implements Buffer{
 		return readValue;  //返回读出的数据
 	}//end mathod get
 	//116-end  ---hu
+
+	public String createStateOutput() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
