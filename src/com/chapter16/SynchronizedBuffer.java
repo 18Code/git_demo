@@ -10,10 +10,17 @@ public class SynchronizedBuffer implements Buffer{
 		//获取当前线程的名称
 		String name = Thread.currentThread().getName();
 		
-		
-		
-		
-		
+		while (occupiedBufferCount == 1) {	//当缓冲区的数据量为1时
+			try{
+				System.err.println(name + " tries to wtire.");  //输出该线程尝试写数据
+				displayState(" Buffer full."+ name +" waits.");
+				wait();  //调用wait方法，线程进入等待状态
+				
+			}catch(InterruptedException exception){	//捕获InterruptedException异常
+				exception.printStackTrace();	//打印栈信息
+			}
+			
+		}
 		//31-56 ---shasha
 		buffer = value;   //将接受的value值传给buffer
 		++occupiedBufferCount;  //将计数变量加一
@@ -25,7 +32,7 @@ public class SynchronizedBuffer implements Buffer{
 		String name = Thread.currentThread().getName();  //获取当前线程的名称
 		while(occupiedBufferCount == 0){   //当缓冲区的数据量为0时
 			try{
-				System.err.println(name + " tries to read");  //输出该线程尝试读数据
+				System.err.println(name + " tries to read.");  //输出该线程尝试读数据
 				displayState(" Buffer empty."+ name +" waits.");
 				wait();  //调用wait方法，线程进入等待状态
 				
