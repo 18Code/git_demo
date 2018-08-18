@@ -1,6 +1,7 @@
 package com.chapter16;
 
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 //16.12
 //生产者/消费者关系中的生产者
@@ -12,6 +13,24 @@ public class Producer3 extends Thread{
 		super("Producer");//调用父类中构造方法
 		sharedLocation = shared;
 		outputArea = output;
+	}
+	
+	public void run() {
+		for (int count = 11; count <= 20; count++) {
+			
+			try {
+				Thread.sleep((int)(Math.random() * 3000));
+				sharedLocation.set(count);
+				
+			} catch (InterruptedException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		
+		String name = getName();
+		SwingUtilities.invokeLater(new RunnableOutput(outputArea, "\n" +
+				name + " done producing.\n" + name + " terminated.\n"));
 	}
 
 }
