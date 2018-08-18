@@ -1,11 +1,45 @@
 package com.chapter16;
 
+import java.awt.image.BufferStrategy;
+
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
 //16.14
 //SynchronizedBuffer监听对共享整数数组的访问
-public class CircularBuffer implements Buffer{
+public class CircularBuffer implements Buffer{	
 	//8-47---feifei
+	private int buffers[] = {-1, -1, -1};	//数组buffers，具有3个元素的整数数组，代表循环缓冲区
+	
+	private int occupiedBufferCount = 0;	//变量occupiedBufferCount，条件变量，用于确定生产者是否可以将值写入循环缓冲区，以及确定消费者是否可以读出循环缓冲区中的值。
+	
+	private int readLocation = 0, writeLocation = 0;	///变量readLocation表示消费者可以读取的下一个值的位置。变量writeLocation表示生产者可以将值写入的下一个的位置。
+	
+	private JTextArea outputArea;	//显示所有的输出
+	
+	public CircularBuffer(JTextArea output) {	//构造方法
+		outputArea = output;	//将参数output的值赋给outputArea
+	}
+	
+	public synchronized void set(int value) {	//set方法
+		
+		String name = Thread.currentThread().getName();	//获得当前线程名
+		
+		while (occupiedBufferCount == buffers.length) {	//while循环，确定生产者是否必须等待，即所有的缓冲区都是满的
+			
+			try {
+				SwingUtilities.invokeLater(new RunnableOutput(outputArea, 
+						"\nAll buffers full. " + name + " waits."));	//调用SwingUtilities类的invokeLater方法以更新输出，并指出消费者正在等待执行它的任务。
+				wait();	//调用wait方法，使生产线程进入等待CircularBuffer对象的状态
+				
+			} catch (InterruptedException e) {	//捕获InterruptedException
+				// TODO: handle exception
+				e.printStackTrace();	//打印栈信息
+			}
+		}	//while结束
+		
+		
+	}
 	//48-91---wu
 	//92-115---shasha 
 	public synchronized int get(){
