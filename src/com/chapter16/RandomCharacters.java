@@ -15,10 +15,9 @@ import javax.swing.SwingUtilities;
 //16.16
 
 public class RandomCharacters extends JApplet implements ActionListener {
-	private String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  //声明字符串，线程共享该字符串
-	private final static int SIZE = 3;
+	private String alphabet;  
+	private final static int SIZE=3;
 	private JLabel outputs[];
-	private JCheckBox checkboxes[];
 	private Thread threads[];
 	private boolean suspended[];
 
