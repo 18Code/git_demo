@@ -6,8 +6,8 @@ public class Consumer extends Thread{
 	private Buffer sharedLocation;// 用来操作Buffer中的共享数据buffer
 	
 	// constructor
-	public Consumer( Buffer shared ){
-		super( "Consumer" ); // 说明消费者模型
+	public Consumer( Buffer shared, String consumerName ){//changed
+		super( consumerName ); // 说明消费者模型,changed
 		sharedLocation = shared; // 给sharedLocation赋值
 	}
 

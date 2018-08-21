@@ -12,7 +12,7 @@ public class SynchronizedBuffer implements Buffer{
 		
 		while (occupiedBufferCount == 1) {	//当缓冲区的数据量为1时
 			try{
-				System.err.println(name + " tries to wtire.");  //输出该线程尝试写数据
+				System.err.println(name + " tries to write.");  //输出该线程尝试写数据
 				displayState(" Buffer full."+ name +" waits.");
 				wait();  //调用wait方法，线程进入等待状态
 				
