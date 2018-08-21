@@ -22,6 +22,7 @@ public class SharedBufferTest2 {
 		
 		producer.start();	//对Producer线程和Consumer线程调用start方法，使它们进入就绪状态
 		consumer.start();
+		
 	}
 
 }
