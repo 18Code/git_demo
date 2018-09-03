@@ -55,9 +55,17 @@ public class CircularBuffer implements Buffer{
 	//48-91---wu
 	//92-115---shasha 
 	public synchronized int get(){
-		String name = null;
+		String name = Thread.currentThread().getName();//获取当前线程名
 		
-		
+		while ( occupiedBufferCount == 0){//判断缓冲池是否为空
+			try{
+				SwingUtilities.invokeLater(new RunnableOutput(outputArea, 
+					"\nAll buffers empty."  + name + " waits."));
+				wait();//将消费者进程置入等待状态
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
+		}
 		
 		int readValue = buffers[readLocation];   //读出共享数组变量中的数据
 		//输出当前线程读出的数据,invokeLater方法指定GUI处理语句稍后在事件调度线程中使用
