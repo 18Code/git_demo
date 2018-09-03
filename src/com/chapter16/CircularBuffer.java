@@ -3,6 +3,8 @@ package com.chapter16;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+import com.charpter16.RunnableOutput;
+
 //16.14
 //SynchronizedBuffer监听对共享整数数组的访问
 public class CircularBuffer implements Buffer{	
@@ -36,6 +38,18 @@ public class CircularBuffer implements Buffer{
 			}
 		}	//while结束
 		
+		buffers[writeLocation] = value;//将value写入第writeLocaton个缓冲池
+		SwingUtilities.invokeLater( new RunnableOutput(outputArea, 
+			"\n" + name + " writes " + buffers[ writeLocation ] + " "));
+		
+		++occupiedBufferCount;
+		
+		writeLocation = (writeLocation + 1) % buffers.length;//循环，保证writeLocation值在0~2；
+		
+		SwingUtilities.invokeLater( new RunnableOutput(
+			outputArea, createStateOutput() ));//创建输出
+		
+		notify();//唤醒阻塞进程
 		
 	}
 	//48-91---wu
