@@ -3,7 +3,7 @@ package com.chapter16;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
-import com.charpter16.RunnableOutput;
+import com.chapter16.RunnableOutput;
 
 //16.14
 //SynchronizedBuffer监听对共享整数数组的访问

@@ -54,38 +54,47 @@ public class FileTest extends JFrame implements ActionListener{
 				//读取文件的内容，并将其显示在JTextArea中
 				try {
 					BufferedReader input = new BufferedReader(new FileReader(name));	//在BufferReader中包装FileReader，将FileReader对象传递给BufferReader的构造函数
-					StringBuffer buffer = new StringBuffer();
+					StringBuffer buffer = new StringBuffer();	//创建一个StringBuffer对象，用来将文件的内容存储在内存中
 					String text;
 					outputArea.append("\n\n");
 					
-					while ((text = input.readLine()) != null) {
-						buffer.append(text + "\n");
+					while ((text = input.readLine()) != null) {	//使用BufferedReader类的readLine方法，一次将一行文本读取为一个字符串。readLine方法在到达文件末尾时返回null
+						buffer.append(text + "\n");	//将该字符串添加到StringBuffer对象中
 					}
 					
 					outputArea.append(buffer.toString());
 					
-				} catch (IOException ioException) {	//如果在打开文件期间发生问题
+				} catch (IOException ioException) {	//如果在打开文件期间发生问题		处理文件操作问题
 					// TODO: handle exception
 					JOptionPane.showMessageDialog(this, "FILE ERROR",
-							"FILE ERROR", JOptionPane.ERROR_MESSAGE);
+							"FILE ERROR", JOptionPane.ERROR_MESSAGE);	//显示一个错误消息对话框
 				}
 			}//end if (name.isFile())
 			
+			else if (name.isDirectory()) {	//如果File对象代表一个目录		输出目录列表
+				String directory[] = name.list();	//使用File类的list方法，读取该目录的内容
+				
+				outputArea.append("\n\nDirectory contents:\n");	//将各目录显示在JTextArea中
+				
+				for (int i = 0; i < directory.length; i++) {
+					outputArea.append(directory[i] + "\n");	//将
+				}
+				
+			}//end else if (name.isDirectory())
 			
-			
-			
-			
-			
-		
-		}//end if (name.exists())
-		
-		
-		
-		
-		
-	}
+		}//end outer if (name.exists())
 
+		else {	//若不是文件或目录，输出错误信息
+			JOptionPane.showMessageDialog(this, e.getActionCommand() + " Does Not Exist", 
+					"ERROR", JOptionPane.ERROR_MESSAGE);
+		}	
+		
+	}//end actionPerformed方法
+
+	public static void main(String args[]) {	//main方法  程序的入口
+		FileTest application = new FileTest();
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 	
 	
-	
-}
+}//end FileTest类
