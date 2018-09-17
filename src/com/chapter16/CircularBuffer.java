@@ -1,9 +1,7 @@
 package com.chapter16;
 
-import javax.swing.JTextArea;
+import javax.swing.JTextArea; 
 import javax.swing.SwingUtilities;
-
-import com.chapter16.RunnableOutput;
 
 //16.14
 //SynchronizedBuffer监听对共享整数数组的访问
@@ -42,7 +40,7 @@ public class CircularBuffer implements Buffer{
 		SwingUtilities.invokeLater( new RunnableOutput(outputArea, 
 			"\n" + name + " writes " + buffers[ writeLocation ] + " "));
 		
-		++occupiedBufferCount;
+		++occupiedBufferCount;//将占据缓冲池的进程数+1
 		
 		writeLocation = (writeLocation + 1) % buffers.length;//循环，保证writeLocation值在0~2；
 		
@@ -79,8 +77,32 @@ public class CircularBuffer implements Buffer{
 	//116-end  ---hu
 
 	public String createStateOutput() {
-		// TODO Auto-generated method stub
-		return null;
+		String output =
+				"(buffers occupied: " + occupiedBufferCount + ")\nbuffers:";
+		
+			for (int i = 0; i < buffers.length; i++)
+				output += " " + buffers[ i ] + "  ";
+			
+			output += "\n        ";
+			
+			for (int i = 0; i < buffers.length; i++)
+				output += "---- ";
+			
+			output += "\n        ";
+			
+			for (int i = 0; i < buffers.length; i++)
+				if ( i == writeLocation && writeLocation == readLocation)
+					output += " ER  ";
+				else if (i == writeLocation)
+					output += " W   ";
+				else if (i == readLocation)
+					output += "  R  ";
+				else
+					output += "     ";
+				
+			output += "\n";
+		
+			return output;
 	}
 
 }
