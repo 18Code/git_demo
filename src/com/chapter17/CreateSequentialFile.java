@@ -43,7 +43,7 @@ public class CreateSequentialFile extends JFrame{
 		
 		enterButton = userInterface.getDoTask2Button();
 		enterButton.setText("Enter");
-//		enterButton.setEnabled(false);
+		enterButton.setEnabled(false);
 		
 		enterButton.addActionListener(new ActionListener() {	//单击“Enter”按钮将数据写入文件中
 			
@@ -92,6 +92,8 @@ public class CreateSequentialFile extends JFrame{
 			try {	//打开文件，引用output可用于将对象写入文件中
 				//向ObjectOutputStream构造函数传递一个新的FileOutputStream对象，将其包装在ObjectOutputStream对象中
 				output = new ObjectOutputStream(new FileOutputStream(fileName));	//创建FileOutputStream对象，向FileOutputStream的构造函数传递一个File对象。
+				openButton.setEnabled(false);
+				enterButton.setEnabled(true);
 			} catch (IOException e) {	//在打开文件时发生问题，则构造函数抛出IOException异常
 				// TODO: handle exception
 				JOptionPane.showMessageDialog(this, "Error Opening File",
