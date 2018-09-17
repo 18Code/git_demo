@@ -45,25 +45,26 @@ public class CreateSequentialFile extends JFrame{
 		enterButton.setText("Enter");
 		enterButton.setEnabled(false);
 		
-		enterButton.addActionListener(new ActionListener() {
+		enterButton.addActionListener(new ActionListener() {	//单击“Enter”按钮将数据写入文件中
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				addRecord();
+				addRecord();	//调用addRecord方法来执行写操作
 			}
 		});
 		
+		//用户关闭应用程序窗口时调用windowClosing方法
 		addWindowListener(new WindowAdapter() {
 
 			@Override
 			public void windowClosing(WindowEvent e) {
 				// TODO Auto-generated method stub
 				super.windowClosing(e);
-				if (output != null) {
-					addRecord();
+				if (output != null) {	//比较output和null。若不相等，说明流是打开的
+					addRecord();	//调用addRecord方法
 				}
-				closeFile();
+				closeFile();	//调用closeFile方法
 			}
 			
 		});
@@ -73,43 +74,44 @@ public class CreateSequentialFile extends JFrame{
 	}
 	
 	private void openFile() {
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		JFileChooser fileChooser = new JFileChooser();	//创建JFileChooser对象，并将该对象的引用赋fileChooser。用来选择文件
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);	//调用setFileSelectionMode方法，用来指定用户是否可以从fileChooser中选择文件或目录。
 		
-		int result = fileChooser.showSaveDialog(this);
+		int result = fileChooser.showSaveDialog(this);	//调用showSaveDialog方法来显示标题为“Save”的JFileChooser对话框。参数this指定JFileChooser对话框的父窗口，从而确定该对话框在屏幕上的显示位置。
 		
-		if (result == JFileChooser.CANCEL_OPTION) {
-			return;
+		if (result == JFileChooser.CANCEL_OPTION) {	//比较result和静态常量CANCEL_OPTION，来判断用户是否单击了“Cancel”按钮
+			return;	//返回
 		}
 		
-		File fileName = fileChooser.getSelectedFile();
+		File fileName = fileChooser.getSelectedFile();	//调用getSelectedFile方法来获取用户所选择的文件
 		
 		if (fileName == null || fileName.getName().equals("")) {
 			JOptionPane.showMessageDialog(this, "Invalid File Name",
 					"Invalid File Name", JOptionPane.ERROR_MESSAGE);
 		} else {
-			try {
-				output = new ObjectOutputStream(new FileOutputStream(fileName));
-			} catch (IOException e) {
+			try {	//打开文件，引用output可用于将对象写入文件中
+				//向ObjectOutputStream构造函数传递一个新的FileOutputStream对象，将其包装在ObjectOutputStream对象中
+				output = new ObjectOutputStream(new FileOutputStream(fileName));	//创建FileOutputStream对象，向FileOutputStream的构造函数传递一个File对象。
+			} catch (IOException e) {	//在打开文件时发生问题，则构造函数抛出IOException异常
 				// TODO: handle exception
 				JOptionPane.showMessageDialog(this, "Error Opening File",
-						"Error", JOptionPane.ERROR_MESSAGE);
+						"Error", JOptionPane.ERROR_MESSAGE);	//显示错误信息
 			}
 		}//end if-else语句
 	}//end openFile方法
 	
 	private void closeFile() {
 		try {
-			output.close();
+			output.close();	//调用output的close方法以关闭文件
 			System.exit(0);
-		} catch (IOException e) {
+		} catch (IOException e) {	//如果closeFile方法不能正确地关闭文件，则抛出IOException异常
 			// TODO: handle exception
 			JOptionPane.showMessageDialog(this, "Error closing file",
 					"Error", JOptionPane.ERROR_MESSAGE);
 			System.exit(0);
 		}
 	}
-	public void addRecord(){
+	public void addRecord(){	//执行写操作
 		int accountNumber = 0;
 		AccountRecord record;
 		String fieldValues[] = userInterface.getFieldValues();
