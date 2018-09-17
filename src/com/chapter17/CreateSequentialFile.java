@@ -43,7 +43,7 @@ public class CreateSequentialFile extends JFrame{
 		
 		enterButton = userInterface.getDoTask2Button();
 		enterButton.setText("Enter");
-		enterButton.setEnabled(false);
+//		enterButton.setEnabled(false);
 		
 		enterButton.addActionListener(new ActionListener() {	//单击“Enter”按钮将数据写入文件中
 			
@@ -108,7 +108,7 @@ public class CreateSequentialFile extends JFrame{
 			// TODO: handle exception
 			JOptionPane.showMessageDialog(this, "Error closing file",
 					"Error", JOptionPane.ERROR_MESSAGE);
-			System.exit(0);
+			System.exit(1);
 		}
 	}
 	public void addRecord(){	//执行写操作
