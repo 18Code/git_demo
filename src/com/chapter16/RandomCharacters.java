@@ -48,7 +48,7 @@ public class RandomCharacters extends JApplet implements ActionListener {
 	public void start() {	//start方法，创建线程，并使线程进入就绪状态。如果用户返回该Web页，applet容器将调用applet的start方法
 		for (int count = 0; count < threads.length; count++) {
 			threads[count] = 	//实例化3个Thread对象，并用实现Runnable接口的RunnableObject类的一个实例来初始化每个对象
-					new Thread(new RunnableObject(), "Thread " + (count + 1)); 
+					new Thread(new RunnableObject(), "Thread " + (count + 1));
 			
 			threads[count].start();	//调用每个Thread的start方法，使它们进入就绪状态
 		}
@@ -90,7 +90,7 @@ public class RandomCharacters extends JApplet implements ActionListener {
 			}
 		}
 	}	//actionPerformed结束
-	
+
     //98--end ---shasha
 	private class RunnableObject implements Runnable {
 		public void run() {   //实现Runnable接口的run方法
