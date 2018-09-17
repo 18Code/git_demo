@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
@@ -18,7 +19,7 @@ import javafx.scene.layout.Border;
 
 //17.7
 public class CreateSequentialFile extends JFrame{
-	private ObjectOutputStream output;
+	private ObjectOutputStream output;	//ObjectOutputStream使对象能够进行序列化，即对象可以转化为一系列字节（或字节流）
 	private BankUI userInterface;
 	private JButton enterButton, openButton;
 	
@@ -88,7 +89,7 @@ public class CreateSequentialFile extends JFrame{
 					"Invalid File Name", JOptionPane.ERROR_MESSAGE);
 		} else {
 			try {
-				
+				output = new ObjectOutputStream(new FileOutputStream(fileName));
 			} catch (IOException e) {
 				// TODO: handle exception
 				JOptionPane.showMessageDialog(this, "Error Opening File",

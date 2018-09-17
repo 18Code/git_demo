@@ -12,19 +12,19 @@ import javax.swing.JTextField;
 public class BankUI extends JPanel {
 	
 	protected final static String names[] = {"Account number", "First name",
-			"Last name", "Balance", "Transaction Amount"};
+			"Last name", "Balance", "Transaction Amount"};	//声明并初始化String数组names
 	
-	protected JLabel labels[];
+	protected JLabel labels[];	//声明GUI组件
 	protected JTextField fields[];
 	protected JButton doTask1, doTask2;
 	protected JPanel innerPanelCenter, innerPanelSouth;
 
-	protected int size;
+	protected int size;	//代表标签和文本域个数
 	
 	public static final int ACCOUNT = 0, FIRSTNAME = 1, LASTNAME = 2,
-			BALANCE = 3, TRANSACTION = 4;
+			BALANCE = 3, TRANSACTION = 4;	//每个数据项代表的int型常量
 	
-	public BankUI(int mySize){
+	public BankUI(int mySize){	//在构造函数中设置JLabel和JTextField的个数
 		size = mySize;
 		labels = new JLabel[size];
 		fields = new JTextField[size];
@@ -54,39 +54,39 @@ public class BankUI extends JPanel {
 		validate();   //重新调整大小，前提是已经设置大小，并大小发生变化
 	}//end constructor
 
-	public JButton getDoTask1Button() {
+	public JButton getDoTask1Button() {		//返回单个的GUI组件
 		return doTask1;
 	}
 	
-	public JButton getDoTask2Button() {
+	public JButton getDoTask2Button() {	//返回单个的GUI组件
 		return doTask2;
 	}
 	
-	public JTextField[] geFields() {
+	public JTextField[] geFields() {	//返回单个的GUI组件
 		return fields;
 	}
 	
-	public void clearFields() {
+	public void clearFields() {	//操作JTextField中的文本
 		for (int count = 0; count < size; count++) {
-			fields[count].setText("");
+			fields[count].setText("");	//将每个文本域置空
 		}
 	}
 	
-	public void setFieldValues(String strings[]) throws IllegalArgumentException {
-		if (strings.length != size) {
+	public void setFieldValues(String strings[]) throws IllegalArgumentException {	//操作JTextField中的文本
+		if (strings.length != size) {	//所传的参数 String数组长度不等于size  抛出异常
 			throw new IllegalArgumentException("There must be " + 
 					size + " Strings in the array");
 		}
 		for (int count = 0; count < size; count++) {
-			fields[count].setText(strings[count]);
+			fields[count].setText(strings[count]);	//将String数组中每个字符串的值赋给每个对应的文本域
 		}
 	}
 	
-	public String[] getFieldValues() {
+	public String[] getFieldValues() {	//操作JTextField中的文本
 		String values[] = new String[size];
 		
 		for (int count = 0; count < size; count++) {
-			values[count] = fields[count].getText();
+			values[count] = fields[count].getText();	//将每个文本域中的文本字段赋给每个对应的value数组元素
 		}
 		
 		return values;

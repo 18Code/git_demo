@@ -3,7 +3,8 @@ package com.chapter17;
 import java.io.Serializable;
 
 //17.6
-public class AccountRecord implements Serializable{
+//定义可序列化的AccountRecord类
+public class AccountRecord implements Serializable{	//实现Serializable接口。使ObjectInputStream和ObjectOutputStream可以使用AccountRecord对象
 	private int account;
 	private String firstName;
 	private String lastName;
