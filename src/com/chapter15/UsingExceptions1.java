@@ -21,9 +21,9 @@ public class UsingExceptions1 {
 		//hu
 		//27-38
 		//catch的类型不对，所以异常没有被捕获
-		catch( RuntimeException runtimeException ){
-			System.err.println("Exception handled in method throwException" );
-		}
+//		catch( RuntimeException runtimeException ){
+//			System.err.println("Exception handled in method throwException" );
+//		}
 		
 		//总是执行finally块
 		finally{
