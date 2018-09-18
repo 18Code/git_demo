@@ -41,7 +41,7 @@ public class Server extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				// TODO Auto-generated method stub
-				sendData(event.getActionCommand());//调用sendData方法，响应操作
+				sendData(event.getActionCommand());//调用sendData方法，响应操作。	将信息发送给客户
 				enterField.setText("");  //将输入区域置空
 			}
 		});
@@ -80,7 +80,7 @@ public class Server extends JFrame{
 	private void waitForConnection() throws IOException{
 		displayMessage("Waiting for connection\n");
 		connection = server.accept();   //允许服务器接受连接
-		//显示连接数
+		//显示连接数	返回客户计算机的主机名
 		displayMessage("Connection "+counter+" received from: "+connection.getInetAddress().getHostName());
 	}
 	private void getStreams() throws IOException{
@@ -94,30 +94,30 @@ public class Server extends JFrame{
 	
 	private void processConnection() throws IOException {
 		String message = "Connection successful";
-		sendData(message);
+		sendData(message);	//把字符串message发送给客户
 		
-		setTextFieldEditable(true);
+		setTextFieldEditable(true);	//设置文本域为可编辑
 		
 		do {
 			try {
-				message = (String) input.readObject();
-				displayMessage("\n" + message);
+				message = (String) input.readObject();	//从客户那里读取一个字符串
+				displayMessage("\n" + message);	//把消息添加到JTextArea后面
 				
 			} catch (ClassNotFoundException e) {
 				// TODO: handle exception
 				displayMessage("\nUnkown object type received");
 			}
-		} while (!message.equals("CLTENT>>> TERMINATE"));
+		} while (!message.equals("CLTENT>>> TERMINATE"));	//客户输出TERMINATE时终止循环
 	}
 	
 	private void closeConnection() {
-		displayMessage("\nTerminating connection\n");
-		setTextFieldEditable(false);
+		displayMessage("\nTerminating connection\n");	//显示终止连接
+		setTextFieldEditable(false);	//设置文本域为不可编辑
 		
 		try {
-			output.close();
+			output.close();	//关闭与Socket关联的流
 			input.close();
-			connection.close();
+			connection.close();	//关闭Socket
 			
 		} catch (IOException e) {
 			// TODO: handle exception
@@ -127,9 +127,9 @@ public class Server extends JFrame{
 	
 	private void sendData(String message) {
 		try {
-			output.writeObject("SERVER>>> " + message);
-			output.flush();
-			displayMessage("\nSERVER>>> " + message);
+			output.writeObject("SERVER>>> " + message);	//写对象
+			output.flush();	//清空输出缓存区
+			displayMessage("\nSERVER>>> " + message);	//把相同的字符串添加到服务器窗口的文本字段中
 			
 		} catch (IOException e) {
 			// TODO: handle exception
@@ -137,14 +137,14 @@ public class Server extends JFrame{
 		}
 	}
 	
-	private void displayMessage(final String messageToDisplay) {
+	private void displayMessage(final String messageToDisplay) {	//displayMessage方法，使用事件发送线程，在应用程序的文本区域中显示信息
 		SwingUtilities.invokeLater(new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				displayArea.append(messageToDisplay);
-				displayArea.setCaretPosition(displayArea.getText().length());
+				displayArea.setCaretPosition(displayArea.getText().length());	//把文本区域中的输入光标定位到文本区域中最后一个字符之后
 			}
 		});
 	}
@@ -155,14 +155,14 @@ public class Server extends JFrame{
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				enterField.setEditable(editable);
+				enterField.setEditable(editable);	//将文本域置为可编辑的状态
 			}
 		});
 	}
 	
 	public static void main(String args[]) {
-		Server application = new Server();
-		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		application.runServer();
+		Server application = new Server();	//创建Server对象
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//指定窗口默认的关闭操作
+		application.runServer();	//调用runServer方法
 	}
 }
