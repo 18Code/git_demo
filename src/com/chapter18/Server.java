@@ -165,4 +165,5 @@ public class Server extends JFrame{
 		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//指定窗口默认的关闭操作
 		application.runServer();	//调用runServer方法
 	}
+
 }
