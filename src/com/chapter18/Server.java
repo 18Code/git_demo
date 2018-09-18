@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 //18.4---Server类
 public class Server extends JFrame{
@@ -89,5 +90,79 @@ public class Server extends JFrame{
 		//设置对象输入流
 		input = new ObjectInputStream(connection.getInputStream());
 		displayMessage("\nGot I/O streams\n");
+	}
+	
+	private void processConnection() throws IOException {
+		String message = "Connection successful";
+		sendData(message);
+		
+		setTextFieldEditable(true);
+		
+		do {
+			try {
+				message = (String) input.readObject();
+				displayMessage("\n" + message);
+				
+			} catch (ClassNotFoundException e) {
+				// TODO: handle exception
+				displayMessage("\nUnkown object type received");
+			}
+		} while (!message.equals("CLTENT>>> TERMINATE"));
+	}
+	
+	private void closeConnection() {
+		displayMessage("\nTerminating connection\n");
+		setTextFieldEditable(false);
+		
+		try {
+			output.close();
+			input.close();
+			connection.close();
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+	private void sendData(String message) {
+		try {
+			output.writeObject("SERVER>>> " + message);
+			output.flush();
+			displayMessage("\nSERVER>>> " + message);
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+			displayArea.append("\nError writing object");
+		}
+	}
+	
+	private void displayMessage(final String messageToDisplay) {
+		SwingUtilities.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				displayArea.append(messageToDisplay);
+				displayArea.setCaretPosition(displayArea.getText().length());
+			}
+		});
+	}
+	
+	private void setTextFieldEditable(final boolean editable) {
+		SwingUtilities.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				enterField.setEditable(editable);
+			}
+		});
+	}
+	
+	public static void main(String args[]) {
+		Server application = new Server();
+		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		application.runServer();
 	}
 }
